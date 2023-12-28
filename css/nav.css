@@ -1,0 +1,319 @@
+* {
+	margin: 0;
+	font-family: "Inter", sans-serif;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+.navigation-include a {
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+	color: rgba(0, 0, 0, 0.856);
+	white-space: nowrap;
+	user-select: none;
+}
+
+.navigation-include ul {
+	display: inline-block;
+	font-size: 24px;
+}
+
+.navigation-include li {
+	font-size: 20px;
+	margin-left: -20px;
+	padding: 4px;
+}
+
+.navigation-include i {
+	padding-left: 7px;
+}
+
+.navigation-include nav {
+	display: flex;
+	padding-top: 46px;
+}
+
+.navigation-include .logo {
+	margin-left: 23.2%;
+	letter-spacing: 1.67px;
+}
+
+.navigation-include {
+	display: flex;
+}
+
+.navigation-include .kmetovi {
+	display: block;
+	margin-right: 5.2%;
+	margin-left: auto;
+	letter-spacing: 0.5px;
+}
+
+.navigation-include .kmet {
+	padding-left: 42px;
+}
+
+.navigation-include .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: rgba(245, 245, 245, 0.85);
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+	padding: 16px 40px;
+	z-index: 1;
+	border-radius: 10px;
+	margin-top: 15px;
+}
+
+.navigation-include .dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.fullWidth {
+	border: 1px solid rgba(0, 0, 0);
+	height: 1px;
+	background-color: rgba(0, 0, 0);
+	margin-top: 44px;
+	opacity: 17%;
+}
+
+.hamburger-wrapper {
+	position: relative;
+	display: none;
+	margin-right: 60px;
+}
+
+.hamburger-menu,
+.clickable-area {
+	width: 32px;
+	height: 2px;
+	background-color: rgba(0, 0, 0, 0.856);
+	position: absolute;
+	cursor: pointer;
+	top: -4px;
+	border-radius: 4px;
+	transform: translateY(-250%);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after {
+	content: "";
+	width: 32px;
+	height: 2px;
+	background-color: rgba(0, 0, 0, 0.856);
+	position: absolute;
+}
+
+.hamburger-menu::before {
+	top: -8px;
+}
+
+.hamburger-menu::after {
+	top: 8px;
+}
+
+.clickable-area {
+	width: 32px;
+	height: 24px;
+	opacity: 0;
+	top: -15px;
+	transform: translateY(-20%);
+	cursor: pointer;
+}
+
+.mobile-navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 1);
+	z-index: 1;
+	display: none;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.mobile-navigation ul {
+	margin: 12px;
+	color: rgb(0, 0, 0, 0.856);
+}
+
+.mobile-navigation .logoikona {
+	color: rgb(0, 0, 0, 0.856);
+	font-size: 26px;
+	margin-left: 4%;
+	display: flex;
+}
+
+.mobile-navigation .elementiNavigacije {
+	margin-left: 8%;
+}
+
+.mobile-navigation .elementiNavigacije a {
+	color: rgb(0, 0, 0, 0.856);
+	font-size: 42px;
+	transition: all 0.3s;
+}
+
+.mobile-navigation .elementiNavigacije i {
+	margin-left: 16px;
+	font-size: 36px;
+}
+
+span.x {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+span.x:before,
+span.x:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: black;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 3px;
+}
+
+span.x:before {
+	transform: rotate(45deg);
+}
+
+span.x:after {
+	transform: rotate(-45deg);
+}
+
+.mobile-navigation .dropdown-mobile {
+	margin: 0px 0px 0px 20px;
+	height: 0;
+	overflow: hidden;
+	transition: height 0.3s ease;
+}
+
+.mobile-navigation .dropdown-mobile a {
+	font-size: 26px;
+	letter-spacing: -0.2px;
+}
+
+.dropdown-content li {
+	transition: all 0.3s;
+}
+
+/* ---------------------- HOVER ---------------------- */
+
+.navigation-include a:hover,
+a {
+	text-shadow: 2px 2px 14px rgba(0, 0, 0, 0.35);
+	color: rgba(0, 0, 0, 1);
+}
+
+#portfolio:hover{
+	cursor: pointer;
+}
+
+.mobile-navigation .elementiNavigacije a:hover {
+	color: rgb(0, 0, 0, 1);
+	margin-left: 7%;
+}
+
+span.x:hover {
+	transform: scale(1.2);
+}
+
+/* ---------------------- RESPONSIVE ---------------------- */
+
+@media (max-width: 1400px) {
+	.navigation-include ul {
+		font-size: 20px;
+	}
+
+	.mobile-navigation .dropdown-content li {
+		font-size: 18px;
+	}
+
+	.navigation-include .logo {
+		margin-left: 16%;
+		letter-spacing: 1.67px;
+	}
+
+	.navigation-include i {
+		padding-left: 6px;
+	}
+
+	.mobile-navigation .elementiNavigacije{
+		width: 440px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.hamburger-wrapper {
+		display: block;
+	}
+
+	.navigation-include .kmetovi ul {
+		display: none;
+	}
+}
+
+@media (max-width: 600px) {
+	.navigation-include .logo{
+		margin-left: 5%;
+	}
+
+	.mobile-navigation .elementiNavigacije a{
+		font-size: 38px;
+	}
+
+	.mobile-navigation .dropdown-mobile a{
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 480px) {
+	.mobile-navigation .logoikona {
+		margin-left: calc(auto - 24%);
+		margin-right: auto;
+	}
+
+	.mobile-navigation .logoikona ul:nth-child(2){
+		padding-left: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.mobile-navigation ul{
+		padding-left: 10px;
+	}
+
+	.mobile-navigation .elementiNavigacije {
+		margin-left: auto;
+		margin-right: auto;
+		width: 360px;
+	}
+
+	.mobile-navigation .dropdown-mobile a {
+		letter-spacing: -1px;
+	}
+}
+
+@media(max-width: 400px){
+	.mobile-navigation .elementiNavigacije{
+		width: 320px;
+	}
+
+	.mobile-navigation .elementiNavigacije a{
+		font-size: 36px;
+	}
+
+	.mobile-navigation .dropdown-mobile a{
+		font-size: 22px;
+	}
+}

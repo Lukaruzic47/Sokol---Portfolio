@@ -1,0 +1,187 @@
+* {
+	margin: 0;
+}
+
+footer {
+	background-color: rgba(0, 0, 0, 0.85);
+	margin-top: 100px;
+	margin-bottom: 0;
+	height: 370px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+footer nav {
+	display: flex;
+	margin-top: 44px;
+	margin-left: 1.8%;
+}
+
+footer a {
+	font-family: "Inter", sans-serif;
+	text-decoration: none;
+	text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.4);
+	color: rgba(255, 255, 255, 0.7);
+	white-space: nowrap;
+	user-select: none;
+}
+
+footer .logo {
+	letter-spacing: 2px;
+}
+
+footer ul {
+	display: inline-block;
+	font-size: 24px;
+	margin-right: 46px;
+}
+
+footer li {
+	list-style-type: none;
+	font-size: 20px;
+	margin-left: -20px;
+	padding: 4px;
+}
+
+footer i {
+	padding-left: 15.5px;
+}
+
+footer .kmetovi {
+	margin-left: auto;
+	margin-right: 2.6%;
+	letter-spacing: 1px;
+}
+
+footer .dropdown-content {
+	position: absolute;
+	min-width: 160px;
+	padding: 16px 40px;
+	margin-top: 15px;
+}
+
+footer .dropdown-content li {
+	padding-bottom: 14px;
+}
+
+footer a:hover {
+	cursor: pointer;
+	text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+	color: rgb(255, 255, 255);
+}
+
+footer i {
+	font-size: 35px;
+	margin-top: auto;
+}
+
+.social {
+	color: white;
+	position: absolute;
+	top: 83%;
+	right: 5%;
+	white-space: nowrap;
+}
+
+/* --------------------- RESPONSIVE --------------------- */
+
+@media (max-width: 1370px) {
+	footer ul {
+		font-size: 20px;
+		margin-right: 20px;
+	}
+
+	footer li {
+		font-size: 18px;
+		margin-left: -20px;
+	}
+
+	footer {
+		margin-top: 80px;
+		height: 330px;
+	}
+
+	footer .social {
+		top: 83%;
+		right: 5%;
+	}
+}
+
+@media (max-width: 1000px) {
+	footer ul {
+		font-size: 16px;
+		margin-right: 0px;
+	}
+
+	footer nav {
+		margin-top: 24px;
+		margin-left: 0.5%;
+	}
+
+	footer li {
+		font-size: 14px;
+		margin-left: -30px;
+		padding: 1px;
+	}
+
+	footer .dropdown-content {
+		min-width: 160px;
+		padding: 0px 40px;
+		margin-top: 10px;
+	}
+
+	footer .kmetovi {
+		margin-right: 4%;
+	}
+
+	footer {
+		margin-top: 80px;
+		height: 250px;
+	}
+
+	footer i {
+		font-size: 25px;
+	}
+
+	footer .social {
+		top: 83%;
+		right: 5%;
+	}
+}
+
+@media (max-width: 800px) {
+	footer ul.logo {
+		padding: 0;
+	}
+
+	footer {
+		flex-direction: column;
+		height: 150px;
+	}
+
+	footer nav {
+		flex-direction: column;
+		margin-top: 20px;
+	}
+
+	footer .kmetovi {
+		display: none;
+	}
+
+	footer .logo {
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 28px;
+	}
+
+	footer i {
+		padding: 7.5px;
+	}
+
+	footer .social {
+		margin: 30px auto auto auto;
+		position: static;
+	}
+}

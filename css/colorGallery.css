@@ -1,0 +1,102 @@
+* {
+	margin: 0;
+}
+
+.mainGallery {
+	display: flex;
+	flex-direction: row;
+	margin-top: 58px;
+	justify-content: center;
+}
+
+.columns {
+	display: flex;
+	flex-direction: column;
+	width: 20.33%;
+	min-height: 20px;
+	margin-left: 9px;
+	margin-right: 9px;
+	background-color: rgb(0, 0, 0, 0.1);
+}
+
+.image {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden; /* Dodano kako bi animacija bila glatka */
+	margin-bottom: 12px;
+}
+
+.overlay p {
+	margin: auto auto 30px 30px;
+	font-weight: bolder;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 4px);
+	background: linear-gradient(
+		rgb(0, 0, 0, 0),
+		rgb(0, 0, 0, 0.2),
+		rgb(0, 0, 0, 0.6)
+	);
+	color: rgb(255, 255, 255, 1);
+	border-radius: 5px;
+	overflow: auto;
+	opacity: 0;
+	transition: all 0.5s ease;
+	display: flex;
+}
+
+.image:hover .overlay {
+	display: flex;
+	opacity: 1;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+img {
+	width: 100%;
+	border-radius: 5px;
+}
+
+/* ---------------------- HOVER ---------------------- */
+
+
+
+/* ---------------------- RESPONSIVE ---------------------- */
+
+@media (max-width: 1800px) {
+	.mainGallery {
+		margin-top: 44px;
+	}
+
+	.columns{
+		width: 27.33%;
+	}
+}
+
+@media (max-width: 1200px) {
+	.mainGallery {
+		margin-top: 30px;
+	}
+
+	.columns{
+		width: 41.5%;
+	}
+}
+
+@media (max-width: 650px) {
+	.mainGallery {
+		margin-top: 14px;
+	}
+
+	.columns{
+		width: 85%;
+	}
+}
