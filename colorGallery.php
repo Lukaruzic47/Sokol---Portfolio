@@ -12,6 +12,7 @@
     $getDataFrom = 'cimages';
     ?>
     <link rel="stylesheet" href="css/colorGallery.css">
+    <link rel="stylesheet" href="css/modal.css">
     <script src="js/columnGenerator.js"></script>
     <script>
         getValueLol('<?php echo $getDataFrom; ?>');
@@ -28,6 +29,7 @@
         
     </main>
     <?php include "includes/footer.php" ?>
+    <script src="js/modal.js"></script>
 </body>
 <!-- novi komentari -->
 

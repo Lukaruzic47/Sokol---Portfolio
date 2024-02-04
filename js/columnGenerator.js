@@ -68,6 +68,7 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 			var xml = xhttp.responseXML;
 			var album = xml.getElementsByTagName("Image");
 			for (let i = 0; i < album.length; i++){
+				SlikaID = album[i].getElementsByTagName("ID")[0].innerHTML;
 				SlikaNaziv = album[i].getElementsByTagName("Name")[0].innerHTML;
 				SlikaItself = album[i].getElementsByTagName("Image_Path")[0].innerHTML;
 				SlikaDatum = album[i].getElementsByTagName("Date")[0].innerHTML;
@@ -75,9 +76,8 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				SlikaStupacDesktop = album[i].getElementsByTagName("Desktop_Column")[0].innerHTML;
 				SlikaStupacTablet = album[i].getElementsByTagName("Tablet_Column")[0].innerHTML;
 
-				ispisSlika = "<div class='image'><img src='images/" + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='overlay'><p>" + SlikaDatum + "</p></div></div>";
+				ispisSlika = "<div class='image'><img src='images/" + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button class='but1'>Edit<i class='fa-solid fa-bars'></i></button><button class='but2'>Move up<i class='fa-solid fa-arrow-up'></i></button><button class='but3'>Move down<i class='fa-solid fa-arrow-down'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>" + SlikaDatum + "</p></div></div>";
 			
-			console.log("iFromAnotherMother: " + iFromAnotherMother + " i: "+ i + ispisSlika);
 			if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
 				ColumnContent += ispisSlika;
 			}
@@ -90,7 +90,6 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 			if(numOfCols == 1){
 				ColumnContent += ispisSlika;
 			}
-			console.log("ColumnContent: " + ColumnContent);
 			}
 
 			document.getElementById("stupac" + iFromAnotherMother + "").innerHTML = ColumnContent;
