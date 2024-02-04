@@ -34,6 +34,23 @@
 	font-weight: bolder;
 }
 
+.edit{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	top: 3px;
+	right: 3px;
+	color: rgb(214, 214, 214);
+	font-size: 4px;
+	padding: 13px;
+	z-index: 2;
+}
+
+.edit i{
+	margin: 1.5px;
+	text-shadow: 1px 1px 2px black;
+}
+
 .overlay {
 	position: absolute;
 	top: 0;
@@ -67,7 +84,10 @@ img {
 
 /* ---------------------- HOVER ---------------------- */
 
-
+.edit:hover{
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+}
 
 /* ---------------------- RESPONSIVE ---------------------- */
 

@@ -75,7 +75,7 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				SlikaStupacDesktop = album[i].getElementsByTagName("Desktop_Column")[0].innerHTML;
 				SlikaStupacTablet = album[i].getElementsByTagName("Tablet_Column")[0].innerHTML;
 
-				ispisSlika = "<div class='image'><img src='images/" + SlikaItself +"' alt='" + SlikaNaziv +"'><div class='overlay'><p>" + SlikaDatum + "</p></div></div>";
+				ispisSlika = "<div class='image'><img src='images/" + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='overlay'><p>" + SlikaDatum + "</p></div></div>";
 			
 			console.log("iFromAnotherMother: " + iFromAnotherMother + " i: "+ i + ispisSlika);
 			if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
