@@ -18,45 +18,48 @@
 		<title>Just Navigation</title>
 	</head>
 	<body>
-		<section class="navigation-include">
-			<nav>
-				<ul class="logo">
-					<a href="">TIN JOSIP SOKOL</a>
-				</ul>
-			</nav>
-			<nav class="kmetovi">
-				<ul class="kmet">
-					<a href="">WELCOME</a>
-				</ul>
-				<div class="dropdown">
-					<ul class="kmet">
-						<a id="portfolio"
-							>PORTFOLIO
-							<i id="arrow" class="fas fa-caret-down"></i>
-						</a>
-
-						<div class="dropdown-content">
-							<li><a href="">MAIN GALLERY</a></li>
-							<li><a href="">BLACK & WHITE GALLERY</a></li>
-							<li><a href="">COVER ARTS</a></li>
-							<li><a href="">MUSIC SPOTS</a></li>
-						</div>
+		<div class="nav-placeholder"></div>
+		<div class="nav-top" id="nav-top">
+			<section class="navigation-include">
+				<nav>
+					<ul class="logo">
+						<a href="">TIN JOSIP SOKOL</a>
 					</ul>
-				</div>
-				<ul class="kmet">
-					<a href="">ABOUT ME</a>
-				</ul>
-				<ul class="kmet">
-					<a href="">CONTACT ME</a>
-				</ul>
-				<div class="hamburger-wrapper">
-					<div class="hamburger-menu"></div>
-					<div id="bitchborgar" class="clickable-area"></div>
-				</div>
-			</nav>
-		</section>
+				</nav>
+				<nav class="kmetovi">
+					<ul class="kmet">
+						<a href="">WELCOME</a>
+					</ul>
+					<div class="dropdown">
+						<ul class="kmet">
+							<a id="portfolio"
+								>PORTFOLIO
+								<i id="arrow" class="fas fa-caret-down"></i>
+							</a>
+	
+							<div class="dropdown-content">
+								<li><a href="">MAIN GALLERY</a></li>
+								<li><a href="">BLACK & WHITE GALLERY</a></li>
+								<li><a href="">COVER ARTS</a></li>
+								<li><a href="">MUSIC SPOTS</a></li>
+							</div>
+						</ul>
+					</div>
+					<ul class="kmet">
+						<a href="">ABOUT ME</a>
+					</ul>
+					<ul class="kmet">
+						<a href="">CONTACT ME</a>
+					</ul>
+					<div class="hamburger-wrapper">
+						<div class="hamburger-menu"></div>
+						<div id="bitchborgar" class="clickable-area"></div>
+					</div>
+				</nav>
+			</section>
+			<hr class="fullWidth" />
+		</div>
 
-		<hr class="fullWidth" />
 
 		<main class="mobile-navigation">
 			<div class="logoikona">

@@ -22,7 +22,13 @@ function toggleModal(ID) {
 }
 
 function overlayClick(ID) {
-    var modal = document.getElementById("myModal" + ID);
-    modal.style.display = "none";
-    modalStates[ID].visible = false;
+    
+    if(!modalStates[ID]){
+        return;
+    }
+    else{
+        var modal = document.getElementById("myModal" + ID);
+        modal.style.display = "none";
+        modalStates[ID].visible = false;
+    }
 }

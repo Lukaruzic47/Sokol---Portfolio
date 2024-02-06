@@ -32,6 +32,22 @@ document.getElementById('bitchborgar').addEventListener('click', function() {
     });
 });
 
+var previousPosition = window.scrollY;
+
+window.onscroll = function() {
+  var currentPosition = window.scrollY;
+
+  if (previousPosition > currentPosition) {
+    document.getElementById("nav-top").style.top = "0";
+  } else {
+    document.getElementById("nav-top").style.top = "-121px";
+  }
+
+  previousPosition = currentPosition;
+};
+
+
+
 
 
 

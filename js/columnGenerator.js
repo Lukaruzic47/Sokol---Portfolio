@@ -64,7 +64,7 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200){
-			var ispisSlika = "", ColumnContent = "", SlikaItself, SlikaNaziv, SlikaDatum, SlikaStupacTV, SlikaStupacDesktop, SlikaStupacTablet;
+			var ispisSlika = "", ColumnContent = "", SlikaItself, SlikaNaziv, SlikaDatum, SlikaStupacTV, SlikaStupacDesktop, SlikaStupacTablet, SlikaRbTV, SlikaRbDesktop, SlikaRbTablet, SlikaRbMobile, current_rb;
 			var xml = xhttp.responseXML;
 			var album = xml.getElementsByTagName("Image");
 			for (let i = 0; i < album.length; i++){
@@ -75,8 +75,17 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				SlikaStupacTV = album[i].getElementsByTagName("TV_Column")[0].innerHTML;
 				SlikaStupacDesktop = album[i].getElementsByTagName("Desktop_Column")[0].innerHTML;
 				SlikaStupacTablet = album[i].getElementsByTagName("Tablet_Column")[0].innerHTML;
+				SlikaRbTV = album[i].getElementsByTagName("TV_Position")[0].innerHTML;
+				SlikaRbDesktop = album[i].getElementsByTagName("Desktop_Position")[0].innerHTML;
+				SlikaRbTablet = album[i].getElementsByTagName("Tablet_Position")[0].innerHTML;
+				SlikaRbMobile = album[i].getElementsByTagName("Mobile_Position")[0].innerHTML;
 
-				ispisSlika = "<div class='image'><img src='images/" + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button class='but1'>Edit<i class='fa-solid fa-bars'></i></button><button class='but2'>Move up<i class='fa-solid fa-arrow-up'></i></button><button class='but3'>Move down<i class='fa-solid fa-arrow-down'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>" + SlikaDatum + "</p></div></div>";
+				if(numOfCols == 1)current_rb = SlikaRbMobile;
+				if(numOfCols == 2)current_rb = SlikaRbTablet;
+				if(numOfCols == 3)current_rb = SlikaRbDesktop;
+				if(numOfCols == 4)current_rb = SlikaRbTV;
+				
+				ispisSlika = "<div class='image'><img src='images/" + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button class='but1'>Edit<i class='fa-solid fa-bars'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>" + SlikaDatum + "</p></div></div>";
 			
 			if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
 				ColumnContent += ispisSlika;
