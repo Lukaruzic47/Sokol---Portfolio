@@ -49,6 +49,9 @@
 						<a href="">ABOUT ME</a>
 					</ul>
 					<ul class="kmet">
+						<a href="addImage.php">ADD NEW</a>
+					</ul>
+					<ul class="kmet">
 						<a href="">CONTACT ME</a>
 					</ul>
 					<div class="hamburger-wrapper">
