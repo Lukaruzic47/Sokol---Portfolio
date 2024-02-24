@@ -38,7 +38,7 @@
 							</a>
 	
 							<div class="dropdown-content">
-								<li><a href="">MAIN GALLERY</a></li>
+								<li><a href="../colorGallery.php">MAIN GALLERY</a></li>
 								<li><a href="">BLACK & WHITE GALLERY</a></li>
 								<li><a href="">COVER ARTS</a></li>
 								<li><a href="">MUSIC SPOTS</a></li>
@@ -83,7 +83,7 @@
 						<i id="arrow-dva" class="fas fa-caret-down"></i>
 					</li>
 					<div class="dropdown-mobile">
-						<li><a href="">MAIN GALLERY</a></li>
+						<li><a href="../colorGallery.php">MAIN GALLERY</a></li>
 						<li><a href="">BLACK & WHITE GALLERY</a></li>
 						<li><a href="">COVER ARTS</a></li>
 						<li><a href="">MUSIC SPOTS</a></li>
