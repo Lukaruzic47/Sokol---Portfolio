@@ -1,12 +1,27 @@
-function changeClass(){
-    var vrijednost = document.getElementById("redTV").value;
-    var size = 
-    console.log("VRIJEDNOST JE: " + vrijednost);
-    fetchData(vrijednost, size);
+function changeData(Element){
+  var pulledID = Element.value;
+    var size = [
+      {htmlID: "redTV", DBcol: "CI_TV_Column"},
+      {htmlID: "redDesk", DBcol: "CI_Desktop_Column"},
+      {htmlID: "redTablet", DBcol: "CI_Tablet_Column"},
+      {htmlID: "redMob", DBcol: "CI_Mobile_no"},
+    ] 
+
+    var dbColValue;
+    for (var i = 0; i < size.length; i++) {
+        if (size[i].htmlID === Element.id) {
+            dbColValue = size[i].DBcol;
+            break;
+        }
+    }
+    var idElementa = Element.id;
+
+
+    fetchData(pulledID, dbColValue, idElementa);
 }
 
       /* -------------------- novo ------------------------ */
-    function fetchData(stupac, velicina){
+    function fetchData(stupac, velicina, idElementa){
         /* kreiranje objekta za implementaciju asinkrone komunikacije sa serverom */
         var xhttp = new XMLHttpRequest();
         
@@ -21,19 +36,16 @@ function changeClass(){
 
             imageCount = count[0].getElementsByTagName("broj")[0].innerHTML;
             
-            document.getElementById("rbTV").max = imageCount; 
-            document.getElementById("rbTV").placeholder = imageCount; 
+            document.getElementById(idElementa + "2").max = imageCount++; 
+            document.getElementById(idElementa + "2").placeholder = imageCount++; 
             }
         };
+
+        if(velicina === "CI_Mobile_no"){
+          stupac = "CI_Mobile_no";
+        }
 
         /* definicija parametara zahtjeva te slanje zahtjeva za podacima => sa zahtjevom se šalje ID odabranog žanra */
         xhttp.open("GET", "DBtestSiteSave.php?col=" + stupac + "&size=" + velicina, true);
         xhttp.send();
     }
-
-      // na učitavanju stranice postavlja se sortiranje po imenu DLCa kao default
-    document.addEventListener("DOMContentLoaded", function(){
-          return fetchData(1, 4);
-    });
-
-      /* -------------------------------------------------- */

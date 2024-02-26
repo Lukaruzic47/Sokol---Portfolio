@@ -1,0 +1,26 @@
+.AESave{
+    width: 85%;
+    margin: auto;
+}
+
+.AEScontainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2{
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.AESresult{
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.AESimage img{
+    width: auto;
+    max-height: 400px;
+}

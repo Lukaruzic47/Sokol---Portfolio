@@ -203,3 +203,13 @@
 	}
   }
   
+@media (max-width: 600px) {
+	.inputElement6 {
+		justify-content: center;
+		width: 100%;
+	}
+	
+	.submit{
+		width: 100%;
+	}
+}
