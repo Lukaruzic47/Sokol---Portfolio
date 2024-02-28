@@ -28,6 +28,17 @@
 	flex-wrap: wrap;
 }
 
+.form5{
+	width: 80%;
+	font-size: 18px;
+	margin: 40px 0 40px 0;
+	color: #000000a4;
+}
+
+.form5 li{
+	margin: 10px;
+}
+
 .placeholder1 {
 	width: 5%;
 }
@@ -69,7 +80,8 @@
 .inputElement2 select,
 .inputElement3 input,
 .inputElement3 select,
-.treciRed textarea{
+.treciRed textarea, 
+.inputElement7 select{
 	height: 50px;
 	border: 1.25px solid rgba(0, 0, 0, 0.25);
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -103,6 +115,11 @@
 .inputElement6{
     width: 96.2%;
 } 
+
+.inputElement7{
+	width: 46.9%;
+	margin-top: 20px;
+}
 
 .inputElement4 textarea {
 	width: 100%;
@@ -158,13 +175,13 @@
 }
 
 .submit{
-    width: 230px;
+    width: 260px;
     height: 50px;
     background-color: #252525;
     color: white;
     border-radius: 5px;
     border: 0px;
-    font-size: 22px;
+    font-size: 25px;
 	margin-right: -8px;
     cursor: pointer;
     text-shadow: 4px 4px 7px rgba(255, 255, 255, 0.415);

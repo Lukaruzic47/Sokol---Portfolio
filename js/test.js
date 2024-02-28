@@ -36,8 +36,8 @@ function changeData(Element){
 
             imageCount = count[0].getElementsByTagName("broj")[0].innerHTML;
             
-            document.getElementById(idElementa + "2").max = imageCount++; 
-            document.getElementById(idElementa + "2").placeholder = imageCount++; 
+            document.getElementById(idElementa + "2").max = ++imageCount; 
+            document.getElementById(idElementa + "2").placeholder = imageCount; 
             }
         };
 

@@ -48,17 +48,26 @@ function columnGeneration(columns) {
 function imageDisplay(numOfCols, table, iFromAnotherMother) {
 	var orderBy = "";
 
-	if(numOfCols == 4){
-		orderBy = "CI_TV_no";
-	}
-	if(numOfCols == 3){
-		orderBy = "CI_Desktop_no";
-	}
-	if(numOfCols == 2){
-		orderBy = "CI_Tablet_no";
+	if(getDataFrom == "cimages"){
+		var prefix = "CI";
+		var putanja = "images/Color/";
 	}
 	else{
-		orderBy = "CI_Mobile_no";
+		var prefix = "BW";
+		var putanja = "images/BlackWhite/";
+	}
+
+	if(numOfCols == 4){
+		orderBy = prefix + "_TV_no";
+	}
+	if(numOfCols == 3){
+		orderBy = prefix + "_Desktop_no";
+	}
+	if(numOfCols == 2){
+		orderBy = prefix + "_Tablet_no";
+	}
+	else{
+		orderBy = prefix + "_Mobile_no";
 	}
 
 	var xhttp = new XMLHttpRequest();
@@ -85,7 +94,7 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 3)current_rb = SlikaRbDesktop;
 				if(numOfCols == 4)current_rb = SlikaRbTV;
 				
-				ispisSlika = "<div class='image'><img src='images/" + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button class='but1'>Edit<i class='fa-solid fa-bars'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>" + SlikaDatum + "</p></div></div>";
+				ispisSlika = "<div class='image'><img src='" + putanja + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button class='but1'>Edit<i class='fa-solid fa-bars'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>" + SlikaDatum + "</p></div></div>";
 			
 			if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
 				ColumnContent += ispisSlika;
@@ -105,12 +114,19 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 		}
 	};
 
+	/* --------------- GET --------------- */
+	/*
+	xhttp.open("GET", "colorGalleryQuerry.php?source=" + table + "&orderBy=" + orderBy, true);
+	xhttp.send();
+	*/
+	
+	/* --------------- POST --------------- */
+	
 	var postContent = "source=" + encodeURIComponent(table) + "&orderBy=" + encodeURIComponent(orderBy);
-
 	xhttp.open("POST", "colorGalleryQuerry.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send(postContent);
-
+	
 	//tinjosipsokol.local/colorGalleryQuerry.php?source=cimages&orderBy=CImages_ID
 }
 

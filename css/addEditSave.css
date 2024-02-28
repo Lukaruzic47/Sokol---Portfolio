@@ -1,3 +1,7 @@
+*{
+    font-family: "Inter", sans-serif;
+}
+
 .AESave{
     width: 85%;
     margin: auto;
@@ -11,16 +15,92 @@
 }
 
 h2{
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 56px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: lighter;
 }
 
 .AESresult{
-    margin-top: 15px;
-    margin-bottom: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 
-.AESimage img{
+
+.AESimage{
+    min-width: 600px;
+    min-height: 300px;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 7.5px;
+    background-color: #2525251e;
+    border: 0;
+}
+
+.AESa{
+    color: white;
+}
+
+.AESdisplay{
     width: auto;
-    max-height: 400px;
+    max-height: 450px;
+    border-radius: 7.5px;
+}
+
+.AESbutton{
+    margin-top: 30px;
+    width: 260px;
+    height: 50px;
+    font-size: 25px;
+    background-color: #252525;
+    color: white;
+    text-shadow: 4px 4px 7px rgba(255, 255, 255, 0.415);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0px;
+}
+
+.AESbutton:hover{
+    text-shadow: 4px 4px 7px rgba(255, 255, 255, 0.615);
+    background-color: #353535;
+}
+
+.AESbutton:active{
+    background-color: #171717;
+}
+
+@media (max-width: 1400px){
+    h2{
+        margin-top: 26px;
+        margin-bottom: 12px;
+        font-size: 48px;
+    }
+
+    .AESresult{
+        margin-top: 12px;
+        margin-bottom: 28px;
+    }
+
+    .AESimage img{
+        max-height: 375px;
+    }
+}
+
+@media (max-width: 1000px){
+    h2{
+        margin-top: 22px;
+        margin-bottom: 10px;
+        font-size: 40px;
+    }
+
+    .AESresult{
+        margin-top: 8px;
+        margin-bottom: 24px;
+    }
+
+    .AESimage img{
+        max-height: 325px;
+    }
 }

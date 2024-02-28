@@ -30,12 +30,20 @@
                     <label for="date">Photoshoot date</label><br>
                     <input type="date" name="date" id="date" class="form1-input" required>
                 </div>
+                <div class="inputElement7">
+                    <label for="type">Tip slike</label><br>
+                    <select name="type" id="type" class="form1-input" required>
+                        <option value=""></option>
+                        <option value="boja">U boji</option>
+                        <option value="crno-bijelo">Crno - bijelo</option>
+                    </select>
+                </div>
             </div>
 
             <div class="form2">
                 <div class="prviRed">
                     <div class="inputElement2">
-                        <label for="redTV">Red - TV</label><br>
+                        <label for="redTV">TV Column</label><br>
                         <select name="redTV" id="redTV" onchange="changeData(this)" required>
                             <option value=""></option>
                             <option value="1">1/4</option>
@@ -61,8 +69,8 @@
                     </div>
 
                     <div class="inputElement2">
-                        <label for="rbTV">Redni broj</label>
-                        <input type="number" name="rbTV" id="redDesk2" class="form2-input" max="4" min="1" required>
+                        <label for="rbDesk">Redni broj</label>
+                        <input type="number" name="rbDesk" id="redDesk2" class="form2-input" max="4" min="1" required>
                     </div>
 
                 </div>
@@ -79,8 +87,8 @@
                         </select>
                     </div>
                     <div class="inputElement3">
-                        <label for="rbTV">Redni broj</label>
-                        <input type="number" name="rbTV" id="redTablet2" class="form2-input" max="4" min="1" required>
+                        <label for="rbTab">Redni broj</label>
+                        <input type="number" name="rbTab" id="redTablet2" class="form2-input" max="4" min="1" required>
                     </div>
                     <div class="inputElement3">
                         <label for="redMob">Red - Mobitel</label>
@@ -90,16 +98,8 @@
                         </select>
                     </div>
                     <div class="inputElement3">
-                        <label for="rbTV">Redni broj</label>
-                        <input type="number" name="rbTV" id="redMob2" class="form2-input" max="4" min="1" required>
-                    </div>
-                </div>
-
-                <div class="treciRed">
-                    <div class="inputElement4">
-                        <br><br>
-                        <label for="opis">Opis slike</label><br>
-                        <textarea type="textarea" name="opis" id="opis" rows="155"></textarea><br><br>
+                        <label for="rbMob">Redni broj</label>
+                        <input type="number" name="rbMob" id="redMob2" class="form2-input" max="4" min="1" required>
                     </div>
                 </div>
             </div>
@@ -113,9 +113,16 @@
                     </label>
                 </div>
             </div>
+            <div class="form5">
+                <ul>
+                    <li><i>- Naziv slike u sebi ne smije imati razmake pr. "Snimka zaslona (15)"</i></li>
+                    <li><i>- Slike ne mogu biti veće od 16MB</i></li>
+                    <li><i>- Prihvaćaju se gif, jpeg, jpg i png formati</i></li>
+                </ul>
+            </div>
             <div class="form4">
                 <div class="inputElement6">
-                    <button class="submit" type="submit">SUBMIT</button>
+                    <button class="submit" name="submit" type="submit">SUBMIT</button>
                 </div>
             </div>
         </form>
