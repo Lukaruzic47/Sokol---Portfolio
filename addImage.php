@@ -32,7 +32,7 @@
                 </div>
                 <div class="inputElement7">
                     <label for="type">Tip slike</label><br>
-                    <select name="type" id="type" class="form1-input" required>
+                    <select name="type" id="type" class="form1-input" required onchange="enableFirstSelect(this, redTV)">
                         <option value=""></option>
                         <option value="boja">U boji</option>
                         <option value="crno-bijelo">Crno - bijelo</option>
@@ -44,7 +44,7 @@
                 <div class="prviRed">
                     <div class="inputElement2">
                         <label for="redTV">TV Column</label><br>
-                        <select name="redTV" id="redTV" onchange="changeData(this)" required>
+                        <select name="redTV" id="redTV" onchange="changeData(this); " required disabled="true">
                             <option value=""></option>
                             <option value="1">1/4</option>
                             <option value="2">2/4</option>
@@ -72,8 +72,8 @@
                         <label for="rbDesk">Redni broj</label>
                         <input type="number" name="rbDesk" id="redDesk2" class="form2-input" max="4" min="1" required>
                     </div>
-
                 </div>
+
                 <br><br>
                 <br><br>
 

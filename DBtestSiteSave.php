@@ -3,6 +3,7 @@ header('Content-Type: text/xml');
 
 $col = $_GET['col']; 
 $size = $_GET['size'];
+$table = $_GET['table'];
 include "includes/bazafolio.php";
 $baza = new Baza();
 $upit = "SELECT COUNT(*) FROM cimages WHERE $col = $size";

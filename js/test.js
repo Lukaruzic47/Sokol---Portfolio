@@ -1,3 +1,14 @@
+var tablica = document.getElementById("").value;
+
+function enableFirstSelect(selectedElementId, firstSelect) {
+  const firstSelect = document.getElementById("redTV");
+  if (document.getElementById(selectedElementId).value) {
+    firstSelect.disabled = false;
+  } else {
+    firstSelect.disabled = true;
+  }
+}
+
 function changeData(Element){
   var pulledID = Element.value;
     var size = [
@@ -46,6 +57,8 @@ function changeData(Element){
         }
 
         /* definicija parametara zahtjeva te slanje zahtjeva za podacima => sa zahtjevom se šalje ID odabranog žanra */
-        xhttp.open("GET", "DBtestSiteSave.php?col=" + stupac + "&size=" + velicina, true);
+        var postContent = "col=" + encodeURIComponent(stupac) + "&orderBy=" + encodeURIComponent(velicina) + ""
+
+        xhttp.open("GET", "DBtestSiteSave.php?col=" + stupac + "&size=" + velicina + "&table=", true);
         xhttp.send();
     }

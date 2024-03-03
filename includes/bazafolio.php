@@ -1,10 +1,10 @@
 <?php
 	class Baza{
 		/* deklaracija privatnih konstanti s podacima za prijavu na bazu - dostupne samo unutar klase */
-		private const SERVER = "ID211210_tjsportfolio.db.webhosting.be";
-		private const KORISNICKO_IME = "ID211210_tjsportfolio";
-		private const LOZINKA = "00JGdB72837Z2w4DKs7V";
-		private const BAZA_PODATAKA = "ID211210_tjsportfolio";
+		private const SERVER = "localhost";
+		private const KORISNICKO_IME = "root";
+		private const LOZINKA = "";
+		private const BAZA_PODATAKA = "tjsportfolio_db";
 		
 		/* deklaracija privatne metode za povezivanje na bazu - dostupna samo unutar klase */
 		private function spojiDB(){
