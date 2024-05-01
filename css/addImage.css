@@ -202,6 +202,10 @@
 	.inputElement1 {
 	  width: 125%;
 	}
+
+	.inputElement7 {
+	  width: 125%;
+	}
   
 	label {
 	  font-size: 18px;
@@ -218,6 +222,10 @@
 	.inputElement3{
 		width: 47%;
 	}
+
+	.form5 ul{
+		padding-left: 0;
+	}
   }
   
 @media (max-width: 600px) {
@@ -229,4 +237,23 @@
 	.submit{
 		width: 100%;
 	}
+
+	.form5 ul i{
+		font-size: 16px;
+	}
+
+	.submit{
+		font-size: 20px;
+	}
+
+	.form4{
+		margin: 0px;
+	}
+}
+
+@media (max-width: 350px) {
+	label{
+		font-size: 16px;
+	}
+
 }

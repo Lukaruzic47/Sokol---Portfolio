@@ -46,7 +46,7 @@ function columnGeneration(columns) {
 }
 
 function imageDisplay(numOfCols, table, iFromAnotherMother) {
-	var orderBy = "";
+	var orderBy = "", redniBroj = "";
 
 	if(getDataFrom == "cimages"){
 		var prefix = "CI";
@@ -94,7 +94,7 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 3)current_rb = SlikaRbDesktop;
 				if(numOfCols == 4)current_rb = SlikaRbTV;
 				
-				ispisSlika = "<div class='image'><img src='" + putanja + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button class='but1'>Edit<i class='fa-solid fa-bars'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>" + SlikaDatum + "</p></div></div>";
+				ispisSlika = "<div class='image'><img src='" + putanja + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button class='but1'>Edit<i class='fa-solid fa-bars'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";
 			
 			if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
 				ColumnContent += ispisSlika;

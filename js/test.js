@@ -1,21 +1,26 @@
-var tablica = document.getElementById("").value;
+var tablica, prefix;
 
-function enableFirstSelect(selectedElementId, firstSelect) {
-  const firstSelect = document.getElementById("redTV");
-  if (document.getElementById(selectedElementId).value) {
-    firstSelect.disabled = false;
-  } else {
-    firstSelect.disabled = true;
+function getData(){
+  tablica = document.getElementById("type").value;
+  if(tablica){
+    if(tablica == "boja"){
+      tablica = "cimages";
+      prefix = "CI";
+    }
+    else{
+      tablica = "bwimages";
+      prefix = "BW";
+    }
   }
 }
 
 function changeData(Element){
   var pulledID = Element.value;
     var size = [
-      {htmlID: "redTV", DBcol: "CI_TV_Column"},
-      {htmlID: "redDesk", DBcol: "CI_Desktop_Column"},
-      {htmlID: "redTablet", DBcol: "CI_Tablet_Column"},
-      {htmlID: "redMob", DBcol: "CI_Mobile_no"},
+      {htmlID: "redTV", DBcol: prefix + "_TV_Column"},
+      {htmlID: "redDesk", DBcol: prefix + "_Desktop_Column"},
+      {htmlID: "redTablet", DBcol: prefix + "_Tablet_Column"},
+      {htmlID: "redMob", DBcol: prefix + "_Mobile_no"},
     ] 
 
     var dbColValue;
@@ -26,7 +31,6 @@ function changeData(Element){
         }
     }
     var idElementa = Element.id;
-
 
     fetchData(pulledID, dbColValue, idElementa);
 }
@@ -52,13 +56,12 @@ function changeData(Element){
             }
         };
 
-        if(velicina === "CI_Mobile_no"){
-          stupac = "CI_Mobile_no";
+        if(velicina === prefix + "_Mobile_no"){
+          stupac = prefix + "_Mobile_no";
         }
 
         /* definicija parametara zahtjeva te slanje zahtjeva za podacima => sa zahtjevom se šalje ID odabranog žanra */
-        var postContent = "col=" + encodeURIComponent(stupac) + "&orderBy=" + encodeURIComponent(velicina) + ""
 
-        xhttp.open("GET", "DBtestSiteSave.php?col=" + stupac + "&size=" + velicina + "&table=", true);
+        xhttp.open("GET", "DBtestSiteSave.php?col=" + stupac + "&size=" + velicina + "&table=" + tablica, true);
         xhttp.send();
     }

@@ -1,0 +1,79 @@
+.inter-font {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+.form{
+    padding: 20px;
+    margin: 200px auto auto auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 13px;
+}
+
+.form form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.4rem;
+    width: 50%;
+}
+
+.form input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.62);
+    margin: 10px 0px;
+    font-size: 1rem;
+}
+
+h2{
+    font-size: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit{
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px){
+    .form form{
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px){
+    .form{
+        width: 90%;
+    }
+
+    .form{
+        margin: 100px auto auto auto;
+    }
+    
+}
+
+@media (max-width: 550px){
+    .form{
+        width: 85%;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    .form{
+        margin: 50px auto auto auto;
+    }
+    
+}

@@ -332,3 +332,9 @@ span.x:hover {
 		font-size: 22px;
 	}
 }
+
+@media(max-width: 370px){
+	.navigation-include .logo{
+		padding-left: 15px;
+	}
+}

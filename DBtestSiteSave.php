@@ -6,7 +6,7 @@ $size = $_GET['size'];
 $table = $_GET['table'];
 include "includes/bazafolio.php";
 $baza = new Baza();
-$upit = "SELECT COUNT(*) FROM cimages WHERE $col = $size";
+$upit = "SELECT COUNT(*) FROM $table WHERE $col = $size";
 
 $rezultat = $baza->dohvatiDB($upit);
 

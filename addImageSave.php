@@ -13,6 +13,7 @@
 </head>
 <body>
     <?php
+        var_dump($_POST);
         include "includes/nav.php";
         include "includes/title.php";
     ?>
@@ -128,9 +129,9 @@
                         $temp = explode(".", $_FILES["slika"]["name"]);
                         $ekstenzija = end($temp);
                         
-                        if($_FILES["slika"]["size"] < 16777216 && in_array($ekstenzija, $allowedFormat)){
+                        if($_FILES["slika"]["size"] < 8390108 && in_array($ekstenzija, $allowedFormat)){
                             if($_FILES["slika"]["error"] > 0){
-                                $poruka .= "Error " . $_FILES["slika"]["error"] . "<br/>";
+                                $poruka .= "Error " . $_FILES["slika"]["error"] . ", ne odgovara format slike<br/>";
                             }
                             else{
                                 if(file_exists($lokacija_datoteke)){
@@ -142,7 +143,7 @@
                             }
                         }
                         else{
-                            $poruka .= "An image you are trying to upload is larger than 16 MB <br/>";
+                            $poruka .= "Slika je veća od 8 MB <br/>";
                         }
                     }
 

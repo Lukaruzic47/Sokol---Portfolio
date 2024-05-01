@@ -32,7 +32,7 @@
                 </div>
                 <div class="inputElement7">
                     <label for="type">Tip slike</label><br>
-                    <select name="type" id="type" class="form1-input" required onchange="enableFirstSelect(this, redTV)">
+                    <select name="type" id="type" class="form1-input" onchange="getData()" required>
                         <option value=""></option>
                         <option value="boja">U boji</option>
                         <option value="crno-bijelo">Crno - bijelo</option>
@@ -44,7 +44,7 @@
                 <div class="prviRed">
                     <div class="inputElement2">
                         <label for="redTV">TV Column</label><br>
-                        <select name="redTV" id="redTV" onchange="changeData(this); " required disabled="true">
+                        <select name="redTV" id="redTV" onchange="changeData(this)" required>
                             <option value=""></option>
                             <option value="1">1/4</option>
                             <option value="2">2/4</option>
@@ -116,7 +116,7 @@
             <div class="form5">
                 <ul>
                     <li><i>- Naziv slike u sebi ne smije imati razmake pr. "Snimka zaslona (15)"</i></li>
-                    <li><i>- Slike ne mogu biti veće od 16MB</i></li>
+                    <li><i>- Slike ne mogu biti veće od 8MB</i></li>
                     <li><i>- Prihvaćaju se gif, jpeg, jpg i png formati</i></li>
                 </ul>
             </div>

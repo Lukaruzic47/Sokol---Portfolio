@@ -50,10 +50,7 @@
 					</ul>
 					<ul class="kmet">
 						<a href="addImage.php">ADD NEW</a>
-					</ul>
-					<ul class="kmet">
-						<a href="">CONTACT ME</a>
-					</ul>
+					</ul>	
 					<div class="hamburger-wrapper">
 						<div class="hamburger-menu"></div>
 						<div id="bitchborgar" class="clickable-area"></div>
@@ -89,12 +86,11 @@
 						<li><a href="">MUSIC SPOTS</a></li>
 					</div>
 				</ul>
-
+				<ul class="kmet">
+					<a href="addImage.php">ADD NEW</a>
+				</ul>	
 				<ul>
 					<a href="#">ABOUT ME</a>
-				</ul>
-				<ul>
-					<a href="#">CONTACT ME</a>
 				</ul>
 			</div>
 		</main>
