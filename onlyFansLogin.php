@@ -18,16 +18,17 @@
     ?>
         <section>
             <div class="form inter-font">
-                <form action="loginProvjera.php" method="post">
+                <form action="includes/otvori-sesiju.php" method="POST">
                     <h2 class="inter-font">ADMIN</h2>
-                    <label for="usrnm">Korisničko ime</label><br/>
-                    <input placeholder="Korisnicko ime" type="text" name="usrnm" id="usrnm"><br/>
-                    <label for="psswrd">Lozinka</label><br/>
-                    <input placeholder="Lozinka" type="password" name="psswrd" id="psswrd"><br/>
+                    <label for="korisnicko_ime">Korisničko ime</label><br/>
+                    <input placeholder="korisnicko ime" type="text" name="korisnicko_ime" id="korisnicko_ime"><br/>
+                    <label for="lozinka">Lozinka</label><br/>
+                    <input placeholder="lozinka" type="password" name="lozinka" id="lozinka"><br/>
                     <button class="submit" type="submit">Prijavi se</button>
                 </form>
             </div>
         </section>
     </main>
+    <?php include "includes/footer.php" ?>
 </body>
 </html>

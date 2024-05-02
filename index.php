@@ -17,10 +17,11 @@
         <h1>Tin Josip Sokol</h1>
         <nav>
             <ul>
-                <li>Welcome</li>
-                <li>Portfolio</li>
-                <li>About me</li>
-                <li>Contact Me</li>
+                <li><a href="index.php">Welcome</a></li>
+                <li><a href="colorGallery.php">Portfolio</a></li>
+                <li><a href="">About me</a></li>
+                <li><a href="">Contact Me</a></li>
+                <li><a href="onlyFansLogin.php">Login</a></li>
             </ul>
         </nav>
     </div>

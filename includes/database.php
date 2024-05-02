@@ -1,11 +1,12 @@
 <?php
-	class Baza{
+	class Database {
 		/* deklaracija privatnih konstanti s podacima za prijavu na bazu - dostupne samo unutar klase */
 		private const SERVER = "localhost";
 		private const KORISNICKO_IME = "root";
 		private const LOZINKA = "";
-		private const BAZA_PODATAKA = "tjsportfolio_db";
+		private const BAZA_PODATAKA = "auth_db";
 		
+		/* deklaracija privatne metode za povezivanje na bazu - dostupna samo unutar klase */
 		private function poveziDB(){
 			try{
 				/* pokušaj otvaranja konekcije s MySQL sustavom */
