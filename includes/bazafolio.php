@@ -74,5 +74,38 @@
 				return $resultNumber;
 			}
 		}
+
+		function pripremiUpit($INSorSEL, $korisnickoIme, $lozinka = NULL, $razinaOvlasti = NULL){
+			$mysqli = $this->poveziDB();
+
+			if($INSorSEL == "INSERT" && $lozinka != NULL && $razinaOvlasti != NULL){
+				$upit = "INSERT INTO korisnik (Korisnicko_ime, Lozinka, Ovlasti_korisnika) VALUES (?, ?, ?)";
+
+				$rezultat_upita = $mysqli->prepare($upit);
+				$rezultat_upita->bind_param("ssi", $korisnickoIme, $lozinka, $razinaOvlasti);
+				$rezultat_upita->execute();
+
+				// affected rows provjerava je li upit promjenio nešto u bazi
+				if($rezultat_upita->affected_rows > 0){
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+			elseif($INSorSEL == "SELECT" && $korisnickoIme != NULL){
+				$upit = "SELECT (ID_Korisnika, Korisnicko_ime, Lozinka, Ovlasti_korisnika) FROM korisnik WHERE Korisnicko_ime = ?";
+
+				$rezultat_upita = $mysqli->prepare($upit);
+				$rezultat_upita->bind_param("s", $korisnickoIme);
+				$rezultat_upita->execute();
+				$rezultat = $rezultat_upita->get_result();
+
+				return $rezultat;
+			}
+			else{
+				return false;
+			}
+		}
 	}
 ?>

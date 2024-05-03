@@ -13,17 +13,17 @@ class Authentification{
 
         $ObjektBaza = new Baza();
 
-        $upit = "SELECT ID_Korisnika, Korisnicko_ime, Lozinka, Ovlasti_korisnika FROM korisnik WHERE Korisnicko_ime = '$korisnickoIme'";
-
-        $rezultat_upita = $ObjektBaza->dohvatiDB($upit);
+        $rezultat_upita = $ObjektBaza->pripremiUpit("SELECT", $korisnickoIme);
         
         if(!$rezultat_upita){
             return false;
         }
         else{
-            $red = $rezultat_upita->fetch_array();
-            $niz = array($red['ID_Korisnika'], $red['Korisnicko_ime'], $red['Lozinka'], $red['Ovlasti_korisnika']);
-            return $niz;
+            var_dump($rezultat_upita);
+            return $rezultat_upita;
+            // $red = $rezultat_upita->fetch_array();
+            // $niz = array($red['ID_Korisnika'], $red['Korisnicko_ime'], $red['Lozinka'], $red['Ovlasti_korisnika']);
+            // return $niz;
         }
     }
 
