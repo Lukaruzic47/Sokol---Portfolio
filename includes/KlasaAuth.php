@@ -2,8 +2,8 @@
 
 class Authentification{
 
-    function dohvatiKorisnika($korisnickoIme){
-        
+    private function kreirajObjekt(){
+
         if(is_file("includes/bazafolio.php")){
             require_once "includes/bazafolio.php";
         }
@@ -12,64 +12,50 @@ class Authentification{
         }
 
         $ObjektBaza = new Baza();
+        return $ObjektBaza;
+    }
 
-        $rezultat_upita = $ObjektBaza->pripremiUpit("SELECT", $korisnickoIme);
-        
-        if(!$rezultat_upita){
+    function provjeriPodatkePrijeUnosa($korisnickoIme, $lozinka, $razinaOvlasti = NULL){
+        // provjera korisničkog imena (minimalno 10 znakova, samo slova i brojevi, bez razmaka)
+        if($korisnickoIme == "" || $lozinka == "" || strlen($korisnickoIme) < 10 || strlen($lozinka) < 10){
+            // echo "<p>Morate unijeti korisničko ime i lozinku te moraju imati minimalno 10 znamenaka!</p>";
             return false;
         }
         else{
-            var_dump($rezultat_upita);
-            return $rezultat_upita;
-            // $red = $rezultat_upita->fetch_array();
-            // $niz = array($red['ID_Korisnika'], $red['Korisnicko_ime'], $red['Lozinka'], $red['Ovlasti_korisnika']);
-            // return $niz;
-        }
-    }
-
-    function dodajKorisnika($korisnickoIme, $inputLozinka, $razinaOvlasti){
-
-        if(is_file("includes/database.php")){
-            require_once "includes/database.php";
-        }
-        else{
-            require_once "database.php";
-        }
-
-        $ObjektBaza2 = new Database();
-
-        $password = password_hash($inputLozinka, PASSWORD_BCRYPT, array('cost' => 13));
-
-        $upit = "INSERT INTO korisnik (Korisnicko_ime, Lozinka, Ovlasti_korisnika) VALUES ('$korisnickoIme','$password', '$razinaOvlasti')";
-
-        $rezultat_upita = $ObjektBaza2->promijeniDB($upit);
-
-        if(!$rezultat_upita){
-            return "Korisnik registriran!";
-        }
-        elseif($rezultat_upita == 1062){
-            return "Već postoji korisnik s tim korisničim imenom!";
-        }
-        else{
-            echo $rezultat_upita;
-            return "Registracije neuspješna!";
+            if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#%=@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/u", $lozinka)) {
+                // echo "<p>Lozinka mora sadržavati minimalno 10 znakova, jedno malo slovo, jedno veliko slovo, jedan broj i barem jedan posebni znak.</p>";
+                return false;
+            } 
+            elseif(!preg_match("/^[A-Za-z\d]{10,}$/u", $korisnickoIme)){
+                // echo "<p>Korisničko ime smije sadržavati samo slova i brojeve!</p>";
+                return false;
+            }
+            else {
+                // echo "<p>Korektnost podataka je ispravna!<br>";
+                $rezultat_provjere = $this->provjeriLozinku($lozinka, $korisnickoIme);
+                return $rezultat_provjere;
+            }
         }
     }
     
+    
     function provjeriLozinku($inputLozinka, $korisnickoIme){
         
-        $Auth = $this->dohvatiKorisnika($korisnickoIme);
+        $ObjektBaza = $this->kreirajObjekt();
 
-        if($Auth == false){
-            return "Ne postoji korisnik s tim nazivom!";
+        $rezultat_upita = $ObjektBaza->pripremiUpit("SELECT", $korisnickoIme);
+
+        if(!$rezultat_upita){
+            // echo "<p>Ne postoji korisnik s tim korisničkim imenom!</p>";
+            return false;
         }
-
-        if(password_verify($inputLozinka, $Auth[2])){
-            echo "lozinka iz baze: " . $Auth[2] . "<br>";
-            return $Auth;
+        elseif(password_verify($inputLozinka, $rezultat_upita[2])){
+            // echo "Lozinka je točna!";
+            return $rezultat_upita;
         }
         else{
-            return "Pogrešna lozinka!";
+            // echo "Pogrešna lozinka!";
+            return false;
         }    
     }
 }

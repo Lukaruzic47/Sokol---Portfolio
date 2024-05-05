@@ -4,7 +4,7 @@
 		private const SERVER = "localhost";
 		private const KORISNICKO_IME = "root";
 		private const LOZINKA = "";
-		private const BAZA_PODATAKA = "tjsportfolio_db";
+		private const BAZA_PODATAKA = "auth_db";
 		
 		private function poveziDB(){
 			try{
@@ -79,29 +79,46 @@
 			$mysqli = $this->poveziDB();
 
 			if($INSorSEL == "INSERT" && $lozinka != NULL && $razinaOvlasti != NULL){
+				if(strlen($korisnickoIme) < 10 || strlen($lozinka) < 10){
+					echo "<p>Korisničko ime i lozinka moraju imati najmanje 10 znakova!</p>";
+					return false;
+				}
 				$upit = "INSERT INTO korisnik (Korisnicko_ime, Lozinka, Ovlasti_korisnika) VALUES (?, ?, ?)";
+
+				$lozinka = password_hash($lozinka, PASSWORD_BCRYPT, array('cost' => 15));
 
 				$rezultat_upita = $mysqli->prepare($upit);
 				$rezultat_upita->bind_param("ssi", $korisnickoIme, $lozinka, $razinaOvlasti);
 				$rezultat_upita->execute();
 
 				// affected rows provjerava je li upit promjenio nešto u bazi
-				if($rezultat_upita->affected_rows > 0){
+				if($rezultat_upita->affected_rows > 0 && $rezultat_upita->errno == 0){
+					// echo "<p>Registracija uspješna!</p>";
 					return true;
 				}
+				elseif($rezultat_upita->errno == 1062){
+					// echo "<p>Već postoji korisnik s tim korisničkim imenom!</p>";
+					return false;
+				}
 				else{
+					// echo "<p>Registracija neuspješna!</p>";
 					return false;
 				}
 			}
 			elseif($INSorSEL == "SELECT" && $korisnickoIme != NULL){
-				$upit = "SELECT (ID_Korisnika, Korisnicko_ime, Lozinka, Ovlasti_korisnika) FROM korisnik WHERE Korisnicko_ime = ?";
+				$upit = "SELECT ID_Korisnika, Korisnicko_ime, Lozinka, Ovlasti_korisnika FROM korisnik WHERE Korisnicko_ime = ?";
 
-				$rezultat_upita = $mysqli->prepare($upit);
-				$rezultat_upita->bind_param("s", $korisnickoIme);
-				$rezultat_upita->execute();
-				$rezultat = $rezultat_upita->get_result();
+				$stmt = $mysqli->prepare($upit);
+				$stmt->bind_param("s", $korisnickoIme);
+				$stmt->execute();
+				$rezultat = $stmt->get_result();
+				$red = $rezultat->fetch_array();
 
-				return $rezultat;
+				if($red == NULL) return false;
+
+				$niz = array($red['ID_Korisnika'], $red['Korisnicko_ime'], $red['Lozinka'], $red['Ovlasti_korisnika']);
+
+				return $niz;
 			}
 			else{
 				return false;
