@@ -1,4 +1,7 @@
 <?php
+
+require "includes/autoriziran-pristup.php";
+
 header('Content-Type: text/xml');
 
 $order = $_POST['orderBy'];

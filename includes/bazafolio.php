@@ -4,7 +4,7 @@
 		private const SERVER = "localhost";
 		private const KORISNICKO_IME = "root";
 		private const LOZINKA = "";
-		private const BAZA_PODATAKA = "auth_db";
+		private const BAZA_PODATAKA = "tjsportfolio_db";
 		
 		private function poveziDB(){
 			try{

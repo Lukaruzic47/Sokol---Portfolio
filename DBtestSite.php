@@ -14,6 +14,7 @@
 
 <body>
     <?php
+    require "includes/autoriziran-pristup.php";
     require "includes/bazafolio.php";
     include "includes/nav.php";
     include "includes/title.php";

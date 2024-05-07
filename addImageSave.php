@@ -13,6 +13,8 @@
 </head>
 <body>
     <?php
+        require "includes/autoriziran-pristup.php";
+
         var_dump($_POST);
         include "includes/nav.php";
         include "includes/title.php";

@@ -161,6 +161,14 @@
 	font-size: 36px;
 }
 
+.nav3{
+	margin-top: 10px;
+	margin-right: 5.2%;
+	font-size: 1.2rem;
+	float: right;
+	color: rgba(0, 0, 0, 0.65);
+}
+
 span.x {
 	display: inline-block;
 	width: 24px;
@@ -221,6 +229,11 @@ span.x:after {
 	background-color: white;
 }
 
+.welcome{
+	font-size: 1.4rem;
+	margin-left: 2px;
+}
+
 /* ---------------------- HOVER ---------------------- */
 
 .navigation-include a:hover,
@@ -275,6 +288,10 @@ span.x:hover {
 	.navigation-include .kmetovi ul {
 		display: none;
 	}
+
+	.nav3{
+		display: none;
+	}
 }
 
 @media (max-width: 600px) {
@@ -288,6 +305,9 @@ span.x:hover {
 
 	.mobile-navigation .dropdown-mobile a{
 		font-size: 24px;
+	}
+	.welcome{
+		font-size: 1.2rem;
 	}
 }
 
