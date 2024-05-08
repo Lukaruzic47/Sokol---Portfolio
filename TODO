@@ -1,0 +1,21 @@
+/* ----------------- VISOKI PRIORITET ----------------- */
+
++ Brisanje slika na gumb 
+Dovršiti unos slike (promjena tablice)
+Povećanje slike na klik (full-screen)
+Dodavanje videa s opisom
+Obrisati datoteku slike nakon brisanja u bazi
+
+About me / Contact me - čekam sliku
+Index - čekam sliku
+
+
+/* ----------------- NEOBAVEZNO ----------------- */
+
+Brisanje slika na gumb - AJAX
+Gumb za micanje gore/dolje - AJAX
+Drag and drop pozicioniranje - ???
+Registracija
+Uređivanje slike
+BS Alert message na par sekundi
+Animacija na brisanje slike

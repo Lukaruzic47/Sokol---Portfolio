@@ -21,6 +21,30 @@ function toggleModal(ID) {
     }
 }
 
+function deleteImage(ID, prefix) {
+    // Ako želimo da korisnik potvrdi brisanje koristimo confirm
+    if (confirm("Are you sure you want to delete this image?")) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = xhttp.responseText;
+                console.log(response);
+            }
+        };
+
+        var postContent = "ID=" + encodeURIComponent(ID) + "&prefix=" + encodeURIComponent(prefix);
+        xhttp.open("POST", "deleteImage.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(postContent);
+        var modal = document.getElementById("myModal" + ID);
+        modal.style.display = "none";
+        var image = document.getElementById("slika" + ID);
+        image.style.display = "none";
+    }
+    var modal = document.getElementById("myModal" + ID);
+    modal.style.display = "none";
+}
+
 function overlayClick(ID) {
     
     if(!modalStates[ID]){

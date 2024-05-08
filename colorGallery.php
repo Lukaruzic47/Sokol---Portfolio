@@ -10,10 +10,23 @@
 
     $_SESSION['podatci'] = array('title' => 'GALLERY', 'breadcrumbs' => 'Welcome / Portfolio / Main Gallery');
     $getDataFrom = 'cimages';
+
+    if(!isset($_SESSION["status"]) || !isset($_SESSION["korisnicko_ime"])){
+        $_SESSION["status"] = 0;
+        $_SESSION["korisnicko_ime"] = null;
+    }
+    if(isset($_SESSION['status'])){
+        if($_SESSION['status'] == 1){
+            echo '<script src="js/columnGeneratorAdmin.js"></script>';
+        } 
+        else {
+            echo '<script src="js/columnGenerator.js"></script>';
+        }
+    }
+
     ?>
     <link rel="stylesheet" href="css/colorGallery.css">
     <link rel="stylesheet" href="css/modal.css">
-    <script src="js/columnGenerator.js"></script>
     <script>
         getValueLol('<?php echo $getDataFrom; ?>');
     </script>

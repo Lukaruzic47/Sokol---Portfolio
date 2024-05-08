@@ -27,6 +27,7 @@
 	box-sizing: border-box;
 	overflow: hidden; /* Dodano kako bi animacija bila glatka */
 	margin-bottom: 12px;
+	transition: all 0.5s ease;
 }
 
 .overlay p {
@@ -91,7 +92,7 @@ img {
 
 /* ---------------------- RESPONSIVE ---------------------- */
 
-@media (max-width: 1800px) {
+@media (max-width: 1920px) {
 	.mainGallery {
 		margin-top: 44px;
 	}
@@ -101,7 +102,7 @@ img {
 	}
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1480px) {
 	.mainGallery {
 		margin-top: 30px;
 	}
@@ -111,7 +112,7 @@ img {
 	}
 }
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
 	.mainGallery {
 		margin-top: 14px;
 	}
