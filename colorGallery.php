@@ -11,10 +11,6 @@
     $_SESSION['podatci'] = array('title' => 'GALLERY', 'breadcrumbs' => 'Welcome / Portfolio / Main Gallery');
     $getDataFrom = 'cimages';
 
-    if(!isset($_SESSION["status"]) || !isset($_SESSION["korisnicko_ime"])){
-        $_SESSION["status"] = 0;
-        $_SESSION["korisnicko_ime"] = null;
-    }
     if(isset($_SESSION['status'])){
         if($_SESSION['status'] == 1){
             echo '<script src="js/columnGeneratorAdmin.js"></script>';
@@ -38,8 +34,10 @@
     include "includes/nav.php";
     include "includes/title.php";
     ?>
+    <div class="modalSlika" id="modalSlika">
+        <!-- <div><img src="images/Color/494715.jpg" alt=""></div> -->
+    </div>
     <main class="mainGallery" id="Galerija">
-        
     </main>
     <?php include "includes/footer.php" ?>
     <script src="js/modal.js"></script>

@@ -45,7 +45,7 @@ function deleteImage(ID, prefix) {
     modal.style.display = "none";
 }
 
-function overlayClick(ID) {
+function overlayClick(ID, putanja) {
     
     if(!modalStates[ID]){
         return;
@@ -55,4 +55,12 @@ function overlayClick(ID) {
         modal.style.display = "none";
         modalStates[ID].visible = false;
     }
+    maxxSlika.innerHTML = slikaModal;
+}
+
+function enlargeImage(putanja){
+    // funkcija za prikazivanje slike u modalu preko cijelog ekrana
+    maxxSlika = document.getElementById("modalSlika");
+    slikaModal = "<div><img src='" + putanja + "' alt=''></div>";
+    maxxSlika.innerHTML = slikaModal;
 }

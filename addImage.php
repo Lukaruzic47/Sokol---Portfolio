@@ -33,7 +33,7 @@
                 </div>
                 <div class="inputElement7">
                     <label for="type">Tip slike</label><br>
-                    <select name="type" id="type" class="form1-input" onchange="getData()" required>
+                    <select name="type" id="type" class="form1-input" onchange="getData(this)" required>
                         <option value=""></option>
                         <option value="boja">U boji</option>
                         <option value="crno-bijelo">Crno - bijelo</option>
@@ -45,7 +45,7 @@
                 <div class="prviRed">
                     <div class="inputElement2">
                         <label for="redTV">TV Column</label><br>
-                        <select name="redTV" id="redTV" onchange="changeData(this)" required>
+                        <select name="redTV" id="redTV" onchange="changeData(this)" required disabled>
                             <option value=""></option>
                             <option value="1">1/4</option>
                             <option value="2">2/4</option>
@@ -56,12 +56,12 @@
 
                     <div class="inputElement2">
                         <label for="rbTV">Redni broj</label><br>
-                        <input type="number" name="rbTV" id="redTV2" class="form2-input" max="4" min="1" required>
+                        <input type="number" name="rbTV" id="redTV2" class="form2-input" max="4" min="1" required disabled>
                     </div>
 
                     <div class="inputElement2">
                         <label for="redDesk">Red - Desktop</label>
-                        <select name="redDesk" id="redDesk" onchange="changeData(this)" required>
+                        <select name="redDesk" id="redDesk" onchange="changeData(this)" required disabled>
                             <option value=""></option>
                             <option value="1">1/3</option>
                             <option value="2">2/3</option>
@@ -71,7 +71,7 @@
 
                     <div class="inputElement2">
                         <label for="rbDesk">Redni broj</label>
-                        <input type="number" name="rbDesk" id="redDesk2" class="form2-input" max="4" min="1" required>
+                        <input type="number" name="rbDesk" id="redDesk2" class="form2-input" max="4" min="1" required disabled>
                     </div>
                 </div>
 
@@ -81,7 +81,7 @@
                 <div class="drugiRed">
                     <div class="inputElement3">
                         <label for="redTablet">Red - Tablet</label>
-                        <select name="redTablet" id="redTablet" onchange="changeData(this)" required>
+                        <select name="redTablet" id="redTablet" onchange="changeData(this)" required disabled>
                             <option value=""></option>
                             <option value="1">1/2</option>
                             <option value="2">2/2</option>
@@ -89,18 +89,18 @@
                     </div>
                     <div class="inputElement3">
                         <label for="rbTab">Redni broj</label>
-                        <input type="number" name="rbTab" id="redTablet2" class="form2-input" max="4" min="1" required>
+                        <input type="number" name="rbTab" id="redTablet2" class="form2-input" max="4" min="1" required disabled>
                     </div>
                     <div class="inputElement3">
                         <label for="redMob">Red - Mobitel</label>
-                        <select name="redMob" id="redMob" onchange="changeData(this)" required>
-                            <option value=""></option>
+                        <select name="redMob" id="redMob" onchange="changeData(this)" required disabled>
+                            <!-- <option value=""></option> -->
                             <option value="1">1/1</option>
                         </select>
                     </div>
                     <div class="inputElement3">
                         <label for="rbMob">Redni broj</label>
-                        <input type="number" name="rbMob" id="redMob2" class="form2-input" max="4" min="1" required>
+                        <input type="number" name="rbMob" id="redMob2" class="form2-input" max="4" min="1" required disabled>
                     </div>
                 </div>
             </div>

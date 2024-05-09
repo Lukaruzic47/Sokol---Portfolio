@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<footer>
 	<link rel="stylesheet" href="../css/footer.css" />
 	<script src="https://kit.fontawesome.com/f31be06999.js" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet" />
-</head>
-
-<body>
-	<footer>
 		<nav>
 			<ul class="footer logo">
 				<a href="">TIN JOSIP SOKOL</a>
@@ -44,6 +35,3 @@
 			<a href="https://www.youtube.com/@sokifilm"><i class="fa-brands fa-youtube"></a></i>
 		</div>
 	</footer>
-</body>
-
-</html>

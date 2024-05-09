@@ -2,13 +2,12 @@ CREATE TABLE CImages (
     CImages_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     CI_name VARCHAR(100) NOT NULL,
     CI_date DATE NOT NULL,
-    CI_desc TEXT NOT NULL,
     CI_image VARCHAR(120) NOT NULL,
     CI_TV_Column INT NOT NULL CHECK (CI_TV_Column BETWEEN 1 AND 4),
     CI_TV_no INT NOT NULL,
-    CI_TV_Desktop INT NOT NULL CHECK (CI_TV_Desktop BETWEEN 1 AND 3),
+    CI_Desktop_Column INT NOT NULL CHECK (CI_Desktop_Column BETWEEN 1 AND 3),
     CI_Desktop_no INT NOT NULL,
-    CI_TV_Tablet INT NOT NULL CHECK (CI_TV_Tablet BETWEEN 1 AND 2),
+    CI_Tablet_Column INT NOT NULL CHECK (CI_Tablet_Column BETWEEN 1 AND 2),
     CI_Tablet_no INT NOT NULL,
     CI_Mobile_no INT NOT NULL
 );
@@ -17,17 +16,16 @@ CREATE TABLE BWImages (
     BWImages_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     BW_name VARCHAR(100) NOT NULL,
     BW_date DATE NOT NULL,
-    BW_desc TEXT NOT NULL,
     BW_image VARCHAR(120) NOT NULL,
     BW_TV_Column INT NOT NULL CHECK (BW_TV_Column BETWEEN 1 AND 4),
     BW_TV_no INT NOT NULL,
-    BW_TV_Desktop INT NOT NULL CHECK (BW_TV_Desktop BETWEEN 1 AND 3),
+    BW_Desktop_Column INT NOT NULL CHECK (BW_Desktop_Column BETWEEN 1 AND 3),
     BW_Desktop_no INT NOT NULL,
-    BW_TV_Tablet INT NOT NULL CHECK (BW_TV_Tablet BETWEEN 1 AND 2),
+    BW_Tablet_Column INT NOT NULL CHECK (BW_Tablet_Column BETWEEN 1 AND 2),
     BW_Tablet_no INT NOT NULL,
     BW_Mobile_no INT NOT NULL
 );
-
+/*
 CREATE TABLE CoverArts (
     CAImages_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     CA_name VARCHAR(100) NOT NULL,
@@ -36,20 +34,13 @@ CREATE TABLE CoverArts (
     CA_image VARCHAR(120) NOT NULL,
     CA_TV_Column INT NOT NULL CHECK (CA_TV_Column BETWEEN 1 AND 4),
     CA_TV_no INT NOT NULL,
-    CA_TV_Desktop INT NOT NULL CHECK (CA_TV_Desktop BETWEEN 1 AND 3),
+    CA_Desktop_Column INT NOT NULL CHECK (CA_TV_Desktop BETWEEN 1 AND 3),
     CA_Desktop_no INT NOT NULL,
-    CA_TV_Tablet INT NOT NULL CHECK (CA_TV_Tablet BETWEEN 1 AND 2),
+    CA_Tablet_Column INT NOT NULL CHECK (CA_Tablet_Column BETWEEN 1 AND 2),
     CA_Tablet_no INT NOT NULL,
     CA_Mobile_no INT NOT NULL
 );
-
-CREATE TABLE User (
-    User_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    UserName VARCHAR(35) NOT NULL,
-    UserPassword VARCHAR(40) NOT NULL,
-    UserPermissionLevel INT NOT NULL CHECK (UserPermissionLevel BETWEEN 1 AND 3),
-    User_image VARCHAR(120) NOT NULL
-);
+*/
 
 INSERT INTO cimages (`CImages_ID`, `CI_name`, `CI_date`, `CI_image`, `CI_TV_Column`, `CI_TV_no`, `CI_Desktop_Column`, `CI_Desktop_no`, `CI_Tablet_Column`, `CI_Tablet_no`, `CI_Mobile_no`)
 VALUES

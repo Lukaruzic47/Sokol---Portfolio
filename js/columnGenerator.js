@@ -16,7 +16,7 @@ function checkOnResize() {
 	if (
 		currentColNumber != 3 &&
 		currentWindowSize <= 1920 &&
-		currentWindowSize > 1480
+		currentWindowSize > 1480	
 	) {
 		// dodaj funkciju za smanjivanje na 3 columna
 		columnGeneration(3);
@@ -93,9 +93,10 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 2)current_rb = SlikaRbTablet;
 				if(numOfCols == 3)current_rb = SlikaRbDesktop;
 				if(numOfCols == 4)current_rb = SlikaRbTV;
+				var cijelaPutanja = putanja + SlikaItself;
 				
-				ispisSlika = "<div class='image'><img src='" + putanja + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";
-
+				ispisSlika = "<div class='image' onclick='enlargeImage(" + cijelaPutanja + ")' ><img src='" + cijelaPutanja +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";
+				
 				
 			
 			if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
