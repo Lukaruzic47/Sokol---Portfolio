@@ -58,9 +58,33 @@ function overlayClick(ID, putanja) {
     maxxSlika.innerHTML = slikaModal;
 }
 
+document.addEventListener("click", function(event) {
+    // dohvati element s klasom image
+    var image = event.target;
+    if (image.classList.contains("overlay")) {
+        var imagePath = getImagePath(event);
+        console.log("Image path:", imagePath);
+        var modal = document.getElementById("myModal");
+        var modalImage = document.getElementById("img01");
+        modal.style.display = "block";
+        modalImage.src = imagePath;
+    }
+});
+
+function getImagePath(event) {
+    var image = event.target;
+    var imagePath = image.getAttribute("src");
+    return imagePath;
+}
+
+/*
 function enlargeImage(putanja){
+    maxxSlika = document.querySelector(".image")
+    console.log("Funkcija enlargeImage");
     // funkcija za prikazivanje slike u modalu preko cijelog ekrana
-    maxxSlika = document.getElementById("modalSlika");
+    
     slikaModal = "<div><img src='" + putanja + "' alt=''></div>";
     maxxSlika.innerHTML = slikaModal;
+    maxxSlika.style.backgroundColor = "red";
 }
+*/

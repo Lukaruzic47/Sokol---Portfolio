@@ -6,12 +6,19 @@ function getData(data) {
     );
 
     if (data.value == "boja") {
+      inputs.forEach(element => {
+        element.placeholder = "";
+      });
         tablica = "cimages";
         prefix = "CI";
         arg2 = prefix + "_Mobile_no";
         fetchData("redMob", arg2, "redMob")
     }
+    
     if(data.value == "crno-bijelo"){
+      inputs.forEach(element => {
+        element.placeholder = "";
+      });
         tablica = "bwimages";
         prefix = "BW";
         arg2 = prefix + "_Mobile_no";
