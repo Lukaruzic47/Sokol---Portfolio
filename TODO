@@ -2,9 +2,9 @@
 
 + Brisanje slika na gumb 
 + Dovršiti unos slike (promjena tablice)
-+ Povećanje slike na klik (full-screen)
+Povećanje slike na klik (full-screen)
 Dodavanje videa s opisom
-Obrisati datoteku slike nakon brisanja u bazi
++ Obrisati datoteku slike nakon brisanja u bazi
 + Dodati redni broj na slike iz adminskog pogleda
 + Kod brisanja slika popraviti redosljed slika
 + Kod dodavanja slika popraviti redosljed slika

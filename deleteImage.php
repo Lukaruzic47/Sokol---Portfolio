@@ -3,8 +3,8 @@ include "includes/bazafolio.php";
 $baza = new Baza();
 
 // Get the image ID from the request
-$imageId = $_POST['ID'];
-$prefix = $_POST['prefix'];
+$imageId = $_GET['ID'];
+$prefix = $_GET['prefix'];
 
 //$imageId = 1;
 //$table = 'CI';
@@ -13,10 +13,13 @@ if($prefix == 'BW'){
     $imgPrefix = 'BWimages_id';
     $table = 'BWimages';
     $imgId = 'BWImages_ID';
-} if($prefix == 'CI') {
+    $path = "images/BlackWhite/";
+} 
+if($prefix == 'CI') {
     $imgPrefix = 'Cimages_id';
     $table = 'Cimages';
     $imgId = 'CImages_ID';
+    $path = 'images/Color/';
 }
 
 // Upit traži sve slike u istom stupcu za svaku veličinu čiji je redni broj veći od rednog broja slike koja se briše
@@ -30,15 +33,32 @@ $query = [
 
     "UPDATE $table SET $prefix" . "_Mobile_no = $prefix" . "_Mobile_no - 1 WHERE $prefix" . "_Mobile_no > (SELECT tmp.$prefix" . "_Mobile_no FROM (SELECT $prefix" . "_Mobile_no FROM $table WHERE $imgId = $imageId) AS tmp)",
     
+    "SELECT $prefix" . "_image FROM $table WHERE $prefix" . "Images_ID = $imageId",
+
     "DELETE FROM $table WHERE $imgPrefix = $imageId"
 ];
 
-echo $query[0]; 
-
 // Izvršavamo upite u petlji
 
+$imgPath = "";
+
 foreach($query as $k => $v) {
-    $result[$k] = $baza->promijeniDB($query[$k]);
+    if($k == 4) {
+        $result = $baza->dohvatiDB($query[$k]);
+        if($result) {
+            $row = $result->fetch_array();
+            $imgPath = $row[$prefix . '_image'];
+        }
+    } 
+    else {
+        $result = $baza->promijeniDB($query[$k]);
+    }
+}
+
+if(!$result) {
+    echo 'Success';
+} else {
+    echo 'Error';
 }
 
 ?>
