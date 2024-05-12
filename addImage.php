@@ -44,7 +44,7 @@
             <div class="form2">
                 <div class="prviRed">
                     <div class="inputElement2">
-                        <label for="redTV">TV Column</label><br>
+                        <label for="redTV">TV stupac</label><br>
                         <select name="redTV" id="redTV" onchange="changeData(this)" required disabled>
                             <option value=""></option>
                             <option value="1">1/4</option>
@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="inputElement2">
-                        <label for="redDesk">Red - Desktop</label>
+                        <label for="redDesk">Desktop stupac</label>
                         <select name="redDesk" id="redDesk" onchange="changeData(this)" required disabled>
                             <option value=""></option>
                             <option value="1">1/3</option>
@@ -80,7 +80,7 @@
 
                 <div class="drugiRed">
                     <div class="inputElement3">
-                        <label for="redTablet">Red - Tablet</label>
+                        <label for="redTablet">Tablet stupac</label>
                         <select name="redTablet" id="redTablet" onchange="changeData(this)" required disabled>
                             <option value=""></option>
                             <option value="1">1/2</option>
@@ -92,8 +92,8 @@
                         <input type="number" name="rbTab" id="redTablet2" class="form2-input" max="4" min="1" required disabled>
                     </div>
                     <div class="inputElement3">
-                        <label for="redMob">Red - Mobitel</label>
-                        <select name="redMob" id="redMob" onchange="changeData(this)" required disabled>
+                        <label>Mobitel stupac</label>
+                        <select onchange="changeData(this)" required disabled>
                             <!-- <option value=""></option> -->
                             <option value="1">1/1</option>
                         </select>

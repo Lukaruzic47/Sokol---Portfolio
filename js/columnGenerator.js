@@ -93,7 +93,6 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 3)current_rb = SlikaRbDesktop;
 				if(numOfCols == 4)current_rb = SlikaRbTV;
 				var cijelaPutanja = putanja + SlikaItself;
-				// console.log(cijelaPutanja); -> radi
 				
 				ispisSlika = "<div class='image'><img src='" + cijelaPutanja +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";			
 				// ispisSlika = "<div class='image'><img src='" + cijelaPutanja +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";			

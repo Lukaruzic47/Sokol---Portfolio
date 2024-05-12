@@ -5,6 +5,7 @@ var getDataFrom = "";
 
 function getValueLol(value1) {
 	getDataFrom = value1;
+	console.log(getDataFrom);
 }
 
 function checkOnResize() {
@@ -66,7 +67,7 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 	if(numOfCols == 2){
 		orderBy = prefix + "_Tablet_no";
 	}
-	else{
+	if(numOfCols == 1){
 		orderBy = prefix + "_Mobile_no";
 	}
 	
@@ -94,7 +95,7 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 3)current_rb = SlikaRbDesktop;
 				if(numOfCols == 4)current_rb = SlikaRbTV;
 				
-				ispisSlika = "<div class='image' id='slika" + SlikaID + "'><img src='" + putanja + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button id='myButton" + SlikaID + "' onclick='deleteImage(" + SlikaID + ", \"" + prefix + "\")' class='but1'>Delete<i class='fa-solid fa-xmark'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";
+				ispisSlika = "<div class='image' id='slika" + SlikaID + "'><img src='" + putanja + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='sequenceNum'>" + current_rb + "</div><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button id='myButton" + SlikaID + "' onclick='deleteImage(" + SlikaID + ", \"" + prefix + "\")' class='but1'>Delete<i class='fa-solid fa-xmark'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaNaziv + "</p></div></div>";
 
 				
 			
