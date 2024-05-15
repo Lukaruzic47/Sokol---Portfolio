@@ -8,7 +8,7 @@
     <?php
     session_start();
 
-    $_SESSION['podatci'] = array('title' => 'GALLERY', 'breadcrumbs' => 'Welcome / Portfolio / Black\'n White Gallery');
+    $_SESSION['podatci'] = array('title' => 'BLACK AND WHITE', 'breadcrumbs' => 'Welcome / Portfolio / Black\'n White Gallery');
     $getDataFrom = 'bwimages';
 
     if(!isset($_SESSION["status"]) || !isset($_SESSION["korisnicko_ime"])){

@@ -5,7 +5,6 @@ var getDataFrom = "";
 
 function getValueLol(value1) {
 	getDataFrom = value1;
-	console.log(getDataFrom);
 }
 
 function checkOnResize() {
@@ -95,21 +94,75 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 3)current_rb = SlikaRbDesktop;
 				if(numOfCols == 4)current_rb = SlikaRbTV;
 				
-				ispisSlika = "<div class='image' id='slika" + SlikaID + "'><img src='" + putanja + SlikaItself +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='sequenceNum'>" + current_rb + "</div><div class='edit' onclick='toggleModal(" + SlikaID + ")'><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i><i class='fa-solid fa-circle'></i></div><div class='modal' id='myModal" + SlikaID + "'><button id='myButton" + SlikaID + "' onclick='deleteImage(" + SlikaID + ", \"" + prefix + "\")' class='but1'>Delete<i class='fa-solid fa-xmark'></i></button></div><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaNaziv + "</p></div></div>";
+				// Creating one image with all functionalities
 
+				const imgParentDiv = document.createElement('div');
+								
+				const imgDiv = document.createElement('div');
+				imgDiv.classList.add('image');
+				imgDiv.id = 'slika' + SlikaID;
+				imgParentDiv.appendChild(imgDiv);
+								
+				const img = document.createElement('img');
+				img.src = putanja + SlikaItself;
+				img.alt = SlikaNaziv;
+				img.loading = 'lazy';
+				imgDiv.appendChild(img);
+
+				const sequenceNum = document.createElement('div');
+				sequenceNum.classList.add('sequenceNum');
+				sequenceNum.innerText = current_rb;
+				imgDiv.appendChild(sequenceNum);
+
+				const edit = document.createElement('div');
+				edit.classList.add('edit');
+				edit.setAttribute("onclick", "toggleModal(" + SlikaID + ")");
+				imgDiv.appendChild(edit);
+
+				const editIcon1 = document.createElement('i');
+				editIcon1.classList.add('fa-solid', 'fa-circle');
+				edit.appendChild(editIcon1);
 				
-			
+				const editIcon2 = document.createElement('i');
+				editIcon2.classList.add('fa-solid', 'fa-circle');
+				edit.appendChild(editIcon2);
+				
+				const editIcon3 = document.createElement('i');
+				editIcon3.classList.add('fa-solid', 'fa-circle');
+				edit.appendChild(editIcon3);
+
+				const modal = document.createElement('div');
+				modal.classList.add('modal');
+				modal.id = 'myModal' + SlikaID;
+				imgDiv.appendChild(modal);
+
+				const button = document.createElement('button');
+				button.classList.add('but1');
+				button.id = 'myButton' + SlikaID;
+				button.setAttribute("onclick", "deleteImage(" + SlikaID + ", '" + prefix + "')");
+				button.innerText = 'Delete';
+				modal.appendChild(button);
+
+				const buttonIcon = document.createElement('i');
+				buttonIcon.classList.add('fa-solid', 'fa-xmark');
+				button.appendChild(buttonIcon);
+
+				const overlay = document.createElement('div');
+				overlay.classList.add('overlay');
+				overlay.setAttribute("onclick", "openModal('" + putanja + SlikaItself + "')");
+				imgDiv.appendChild(overlay);				
+
 			if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
-				ColumnContent += ispisSlika;
+				ColumnContent += imgParentDiv.innerHTML;
 			}
 			if(SlikaStupacDesktop == iFromAnotherMother && numOfCols == 3){
-				ColumnContent += ispisSlika;
+				ColumnContent += imgParentDiv.innerHTML;
 			}
 			if(SlikaStupacTablet == iFromAnotherMother && numOfCols == 2){
-				ColumnContent += ispisSlika;;
+				ColumnContent += imgParentDiv.innerHTML;
 			}
 			if(numOfCols == 1){
-				ColumnContent += ispisSlika;
+				ColumnContent += imgParentDiv.innerHTML;
 			}
 			}
 

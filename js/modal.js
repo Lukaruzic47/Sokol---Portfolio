@@ -56,3 +56,46 @@ function overlayClick(ID) {
         modalStates[ID].visible = false;
     }
 }
+
+/* -------------------- Expand image modal ------------------------ */
+
+function openModal(src) {
+    const modal = document.createElement('div');
+    modal.classList.add('image-modal');
+    modal.onclick = function() {
+        modal.remove();
+        enableScroll(); // Enable scroll when modal is closed
+    };
+    
+    const modalBackground = document.createElement('div');
+    modalBackground.classList.add('image-modal-bg');
+    
+    modal.appendChild(modalBackground);
+    
+    const img = document.createElement('img');
+    img.src = src;
+    img.classList.add('image-modal-img');
+    modalBackground.appendChild(img);
+    
+    const closeBtn = document.createElement('i');
+    closeBtn.classList.add('fa-solid', 'fa-sharp', 'fa-xmark', 'modal-close');
+    modal.appendChild(closeBtn);
+    
+    const modalContent = document.createElement('div');
+    modalContent.classList.add('image-modal-content');
+    modalBackground.appendChild(modalContent);
+
+    console.log(modal);
+    // getImageSize(src);
+    
+    document.body.appendChild(modal);
+    disableScroll(); // Disable scroll when modal is opened
+}
+
+function disableScroll() {
+    document.body.style.overflow = 'hidden';
+}
+
+function enableScroll() {
+    document.body.style.overflow = 'auto';
+}

@@ -3,8 +3,8 @@ include "includes/bazafolio.php";
 $baza = new Baza();
 
 // Get the image ID from the request
-$imageId = $_GET['ID'];
-$prefix = $_GET['prefix'];
+$imageId = $_POST['ID'];
+$prefix = $_POST['prefix'];
 
 //$imageId = 1;
 //$table = 'CI';
@@ -56,6 +56,7 @@ foreach($query as $k => $v) {
 }
 
 if(!$result) {
+    unlink($path . $imgPath);
     echo 'Success';
 } else {
     echo 'Error';
