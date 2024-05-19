@@ -94,21 +94,40 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 4)current_rb = SlikaRbTV;
 				var cijelaPutanja = putanja + SlikaItself;
 				
-				ispisSlika = "<div class='image'><img src='" + cijelaPutanja +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";			
-				// ispisSlika = "<div class='image'><img src='" + cijelaPutanja +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";			
+				const imgParentDiv = document.createElement('div');
+								
+				const imgDiv = document.createElement('div');
+				imgDiv.classList.add('image');
+				imgDiv.id = 'slika' + SlikaID;
+				imgParentDiv.appendChild(imgDiv);
+								
+				const img = document.createElement('img');
+				img.src = putanja + SlikaItself;
+				img.alt = SlikaNaziv;
+				img.loading = 'lazy';
+				imgDiv.appendChild(img);
+
+				const overlay = document.createElement('div');
+				overlay.classList.add('overlay');
+				overlay.setAttribute("onclick", "openModal('" + putanja + SlikaItself + "')");
+				imgDiv.appendChild(overlay);
+
+				const imageDesc = document.createElement('p');
+				imageDesc.innerText = "#" + current_rb + " " + redniBroj + " " + SlikaDatum;
+				overlay.appendChild(imageDesc);
 			
-			if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
-				ColumnContent += ispisSlika;
-			}
-			if(SlikaStupacDesktop == iFromAnotherMother && numOfCols == 3){
-				ColumnContent += ispisSlika;
-			}
-			if(SlikaStupacTablet == iFromAnotherMother && numOfCols == 2){
-				ColumnContent += ispisSlika;;
-			}
-			if(numOfCols == 1){
-				ColumnContent += ispisSlika;
-			}
+				if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
+					ColumnContent += imgParentDiv.innerHTML;
+				}
+				if(SlikaStupacDesktop == iFromAnotherMother && numOfCols == 3){
+					ColumnContent += imgParentDiv.innerHTML;
+				}
+				if(SlikaStupacTablet == iFromAnotherMother && numOfCols == 2){
+					ColumnContent += imgParentDiv.innerHTML;
+				}
+				if(numOfCols == 1){
+					ColumnContent += imgParentDiv.innerHTML;
+				}
 			}
 
 			document.getElementById("stupac" + iFromAnotherMother + "").innerHTML = ColumnContent;

@@ -77,9 +77,9 @@ function openModal(src) {
     img.classList.add('image-modal-img');
     modalBackground.appendChild(img);
     
-    const closeBtn = document.createElement('i');
-    closeBtn.classList.add('fa-solid', 'fa-sharp', 'fa-xmark', 'modal-close');
-    modal.appendChild(closeBtn);
+    const closeBtn = document.createElement('span');
+    closeBtn.classList.add('x-modal');
+    modalBackground.appendChild(closeBtn);
     
     const modalContent = document.createElement('div');
     modalContent.classList.add('image-modal-content');

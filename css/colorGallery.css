@@ -134,4 +134,9 @@ img {
 	.columns{
 		width: 85%;
 	}
+
+	.overlay p {
+		margin: auto auto 20px 20px;
+		font-size: 0.9rem;
+	}
 }

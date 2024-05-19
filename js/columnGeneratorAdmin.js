@@ -94,7 +94,9 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 3)current_rb = SlikaRbDesktop;
 				if(numOfCols == 4)current_rb = SlikaRbTV;
 				
-				// Creating one image with all functionalities
+				// ispisSlika = "<div class='image'><img src='" + cijelaPutanja +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";
+				// nedostaje p element u overlay divu		
+
 
 				const imgParentDiv = document.createElement('div');
 								
@@ -130,40 +132,44 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				const editIcon3 = document.createElement('i');
 				editIcon3.classList.add('fa-solid', 'fa-circle');
 				edit.appendChild(editIcon3);
-
+				
 				const modal = document.createElement('div');
 				modal.classList.add('modal');
 				modal.id = 'myModal' + SlikaID;
 				imgDiv.appendChild(modal);
-
+				
 				const button = document.createElement('button');
 				button.classList.add('but1');
 				button.id = 'myButton' + SlikaID;
 				button.setAttribute("onclick", "deleteImage(" + SlikaID + ", '" + prefix + "')");
 				button.innerText = 'Delete';
 				modal.appendChild(button);
-
+				
 				const buttonIcon = document.createElement('i');
 				buttonIcon.classList.add('fa-solid', 'fa-xmark');
 				button.appendChild(buttonIcon);
-
+				
 				const overlay = document.createElement('div');
 				overlay.classList.add('overlay');
 				overlay.setAttribute("onclick", "openModal('" + putanja + SlikaItself + "')");
 				imgDiv.appendChild(overlay);				
-
-			if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
-				ColumnContent += imgParentDiv.innerHTML;
-			}
-			if(SlikaStupacDesktop == iFromAnotherMother && numOfCols == 3){
-				ColumnContent += imgParentDiv.innerHTML;
-			}
-			if(SlikaStupacTablet == iFromAnotherMother && numOfCols == 2){
-				ColumnContent += imgParentDiv.innerHTML;
-			}
-			if(numOfCols == 1){
-				ColumnContent += imgParentDiv.innerHTML;
-			}
+				
+				const imageDesc = document.createElement('p');
+				imageDesc.innerText = "#" + current_rb + " " + redniBroj + " " + SlikaDatum;
+				overlay.appendChild(imageDesc);
+				
+				if(SlikaStupacTV == iFromAnotherMother && numOfCols == 4){
+					ColumnContent += imgParentDiv.innerHTML;
+				}
+				if(SlikaStupacDesktop == iFromAnotherMother && numOfCols == 3){
+					ColumnContent += imgParentDiv.innerHTML;
+				}
+				if(SlikaStupacTablet == iFromAnotherMother && numOfCols == 2){
+					ColumnContent += imgParentDiv.innerHTML;
+				}
+				if(numOfCols == 1){
+					ColumnContent += imgParentDiv.innerHTML;
+				}
 			}
 
 			document.getElementById("stupac" + iFromAnotherMother + "").innerHTML = ColumnContent;

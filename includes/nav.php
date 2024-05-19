@@ -25,7 +25,7 @@
 						<li><a href="../colorGallery.php">MAIN GALLERY</a></li>
 						<li><a href="../blackWhiteGallery.php">BLACK & WHITE GALLERY</a></li>
 						<li><a href="">COVER ARTS</a></li>
-						<li><a href="">MUSIC SPOTS</a></li>
+						<li><a href="../videoGallery.php">MUSIC SPOTS</a></li>
 					</div>
 				</ul>
 			</div>
@@ -89,7 +89,7 @@
 				<li><a href="../colorGallery.php">MAIN GALLERY</a></li>
 				<li><a href="../blackWhiteGallery.php">BLACK & WHITE GALLERY</a></li>
 				<li><a href="">COVER ARTS</a></li>
-				<li><a href="">MUSIC SPOTS</a></li>
+				<li><a href="../videoGallery.php">MUSIC SPOTS</a></li>
 			</div>
 		</ul>
 		<ul>
