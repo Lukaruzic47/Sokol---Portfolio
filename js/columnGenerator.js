@@ -92,7 +92,6 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 2)current_rb = SlikaRbTablet;
 				if(numOfCols == 3)current_rb = SlikaRbDesktop;
 				if(numOfCols == 4)current_rb = SlikaRbTV;
-				var cijelaPutanja = putanja + SlikaItself;
 				
 				const imgParentDiv = document.createElement('div');
 								
@@ -135,7 +134,7 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 	};
 	
 	var postContent = "source=" + encodeURIComponent(table) + "&orderBy=" + encodeURIComponent(orderBy);
-	xhttp.open("POST", "colorGalleryQuerry.php", true);
+	xhttp.open("POST", "GalleryQuery.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send(postContent);
 }

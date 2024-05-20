@@ -11,20 +11,21 @@
     $_SESSION['podatci'] = array('title' => 'MUSIC SPOTS', 'breadcrumbs' => 'Welcome / Portfolio / Music Spots');
     $getDataFrom = 'musicspots';
 
-    if(!isset($_SESSION["status"]) || !isset($_SESSION["korisnicko_ime"])){
+    if (!isset($_SESSION["status"]) || !isset($_SESSION["korisnicko_ime"])) {
         $_SESSION["status"] = 0;
         $_SESSION["korisnicko_ime"] = null;
     }
-    if(isset($_SESSION['status'])){
-        if($_SESSION['status'] == 1){
-            echo '<script src="js/columnGeneratorAdmin.js"></script>';
+    if (isset($_SESSION['status'])) {
+        if ($_SESSION['status'] == 1) {
+            echo '<script src="js/iframeGenerator.js"></script>';
         } else {
-            echo '<script src="js/columnGenerator.js"></script>';
+            echo '<script src="js/iframeGenerator.js"></script>';
         }
     }
+
     ?>
-    <link rel="stylesheet" href="css/colorGallery.css">
-    <link rel="stylesheet" href="css/modal.css">
+        <link rel="stylesheet" href="css/colorGallery.css">
+        <link rel="stylesheet" href="css/modal.css">
     <script>
         getValueLol('<?php echo $getDataFrom; ?>');
     </script>
@@ -36,8 +37,8 @@
     include "includes/nav.php";
     include "includes/title.php";
     ?>
-    <main class="mainGallery" id="Galerija">
-        
+    <main class="mainGallery" id="videoGalerija">
+ 
     </main>
     <?php include "includes/footer.php" ?>
     <script src="js/modal.js"></script>

@@ -207,8 +207,10 @@
                     }
 
                     ?>
-
-            <a class="AESa" href="addImage.php"><button class="AESbutton">RETURN</button></a>
+            <div>
+                <a class="AESa" href="addImage.php"><button class="AESbutton">ADD NEW</button></a>
+                <a class="AESa" href="colorGallery.php"><button class="AESbutton">RETURN</button></a>
+            </div>
         </div>
     </main>
     <?php include "includes/footer.php"; ?>
