@@ -73,7 +73,7 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200){
-			var ispisSlika = "", ColumnContent = "", SlikaItself, SlikaNaziv, SlikaDatum, SlikaStupacTV, SlikaStupacDesktop, SlikaStupacTablet, SlikaRbTV, SlikaRbDesktop, SlikaRbTablet, SlikaRbMobile, current_rb;
+			var ColumnContent = "", SlikaItself, SlikaNaziv, SlikaDatum, SlikaStupacTV, SlikaStupacDesktop, SlikaStupacTablet, SlikaRbTV, SlikaRbDesktop, SlikaRbTablet, SlikaRbMobile, current_rb;
 			var xml = xhttp.responseXML;
 			var album = xml.getElementsByTagName("Image");
 			for (let i = 0; i < album.length; i++){
@@ -94,10 +94,6 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 				if(numOfCols == 3)current_rb = SlikaRbDesktop;
 				if(numOfCols == 4)current_rb = SlikaRbTV;
 				
-				// ispisSlika = "<div class='image'><img src='" + cijelaPutanja +"' alt='" + SlikaNaziv +"' loading='lazy'><div class='overlay' onclick='overlayClick(" + SlikaID + ")'><p>#" + current_rb + " " + redniBroj + " " + SlikaDatum + "</p></div></div>";
-				// nedostaje p element u overlay divu		
-
-
 				const imgParentDiv = document.createElement('div');
 								
 				const imgDiv = document.createElement('div');
@@ -171,13 +167,12 @@ function imageDisplay(numOfCols, table, iFromAnotherMother) {
 					ColumnContent += imgParentDiv.innerHTML;
 				}
 			}
-
 			document.getElementById("stupac" + iFromAnotherMother + "").innerHTML = ColumnContent;
 		}
 	};
 	
 	var postContent = "source=" + encodeURIComponent(table) + "&orderBy=" + encodeURIComponent(orderBy);
-	xhttp.open("POST", "colorGalleryQuerry.php", true);
+	xhttp.open("POST", "GalleryQuery.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send(postContent);
 	

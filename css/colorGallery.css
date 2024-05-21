@@ -194,5 +194,63 @@ img {
 	width: 100%;
 	height: 100%;
 	border: none;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
+}
+
+/* ---------------------- RESPONSIVE ---------------------- */
+
+@media (max-width: 1480px) {
+	.mainGallery {
+		margin-top: 30px;
+	}
+
+	.video-header{
+		font-size: 1.4rem;
+		margin: 20px auto 20px 30px;
+	}
+
+	.iframe-parent{
+		border-radius: 12px;
+		width: calc(100% - 60px);
+	}
+
+	.video-description{
+		margin: 20px auto 20px 30px;
+		font-size: 1rem;
+	}
+
+	#videoGalerija{
+		width: 85%;
+	}
+}
+
+@media (max-width: 800px) {
+	.mainGallery {
+		margin-top: 14px;
+	}
+
+	#videoGalerija{
+		width: 90%;
+	}
+
+	.video-header{
+		font-size: 1.2rem;
+		margin: 15px auto 15px 22px;
+	}
+
+	.iframe-parent{
+		border-radius: 15px;
+		width: calc(100% - 44px);
+	}
+
+	.video-description{
+		margin: 15px auto 15px 22px;
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 500px) {
+	#videoGalerija{
+		width: 95%;
+	}
 }

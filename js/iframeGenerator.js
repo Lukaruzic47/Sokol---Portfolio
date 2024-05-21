@@ -15,11 +15,6 @@ function videoDisplay(table) {
 				VideoNaziv = album[i].getElementsByTagName("Name")[0].innerHTML;
 				VideoLink = album[i].getElementsByTagName("Link")[0].innerHTML;
 				VideoDesc = album[i].getElementsByTagName("Desc")[0].innerHTML;
-				
-				console.log(VideoID);
-				console.log(VideoNaziv);
-				console.log(VideoLink);
-				console.log(VideoDesc);
 
 				const container = document.createElement('div');
 								
@@ -40,8 +35,8 @@ function videoDisplay(table) {
 				iframe.src = VideoLink;
 				iframe.alt = VideoNaziv;
 				iframe.classList.add('video-iframe');
-				// želimo dodati ove opcije u iframe: allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen
-				iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+
+				iframe.setAttribute('allow', 'picture-in-picture; fullscreen');
 				iframe.setAttribute('allowfullscreen', '');
 				iframe_parent.appendChild(iframe);
 
@@ -51,7 +46,6 @@ function videoDisplay(table) {
 				video_container.appendChild(description);	
 				
 				PageContent += container.innerHTML;
-				console.log(PageContent);
 			}
 
 
