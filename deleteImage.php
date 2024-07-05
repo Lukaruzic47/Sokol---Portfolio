@@ -8,7 +8,11 @@ $prefix = $_POST['prefix'];
 
 //$imageId = 1;
 //$table = 'CI';
-
+if($prefix == 'MS'){
+    $query = "DELETE FROM musicspots WHERE Spot_ID = $imageId";
+    $result = $baza->promijeniDB($query);
+    return;
+}
 if($prefix == 'BW'){
     $imgPrefix = 'BWimages_id';
     $table = 'BWimages';

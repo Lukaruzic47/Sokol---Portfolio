@@ -9,6 +9,7 @@
     session_start();
 
     $_SESSION['podatci'] = array('title' => 'MUSIC SPOTS', 'breadcrumbs' => 'Welcome / Portfolio / Music Spots');
+
     $getDataFrom = 'musicspots';
 
     if (!isset($_SESSION["status"]) || !isset($_SESSION["korisnicko_ime"])) {
@@ -17,7 +18,7 @@
     }
     if (isset($_SESSION['status'])) {
         if ($_SESSION['status'] == 1) {
-            echo '<script src="js/iframeGenerator.js"></script>';
+            echo '<script src="js/iframeGeneratorAdmin.js"></script>';
         } else {
             echo '<script src="js/iframeGenerator.js"></script>';
         }

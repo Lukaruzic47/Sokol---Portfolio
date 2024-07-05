@@ -99,3 +99,6 @@ function disableScroll() {
 function enableScroll() {
     document.body.style.overflow = 'auto';
 }
+
+// dodati funkciju koja zatvara modal klikom na pozadinu koristeći z-index, ako z-index nije isti kao kod moda, zatvori modal
+// također možemo provjeriti je li klasa elementa na koji je korisnik kliknuo klasa modala, ako nije zatvori modal
