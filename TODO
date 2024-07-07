@@ -1,24 +1,16 @@
 /* ----------------- VISOKI PRIORITET ----------------- */
 
-+ Brisanje slika na gumb 
-+ Dovršiti unos slike (promjena tablice)
 Povećanje slike na klik (full-screen)
 Dodavanje videa s opisom
-+ Obrisati datoteku slike nakon brisanja u bazi
-+ Dodati redni broj na slike iz adminskog pogleda
-+ Kod brisanja slika popraviti redosljed slika
-+ Kod dodavanja slika popraviti redosljed slika
 Album covers stranica
-Animacija na otvaranje modala (u navigaciji i opcijama slike)
+Animacija na otvaranje modala (u opcijama slike)
 Složiti zatvaranje modala klikom sa strane
 
 About me / Contact me - čekam sliku
-Index - čekam sliku
 
 
 /* ----------------- NEOBAVEZNO ----------------- */
 
-Brisanje slika na gumb - AJAX
 Gumb za micanje gore/dolje - AJAX
 Drag and drop pozicioniranje - ???
 Registracija

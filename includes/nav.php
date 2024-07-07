@@ -18,7 +18,7 @@
 			<div class="dropdown">
 				<ul class="kmet">
 					<a id="portfolio">PORTFOLIO
-						<i id="arrow" class="fas fa-caret-down"></i>
+						<i id="arrow" class="fas fa-caret-down" style="transform: rotate(0deg);"></i>
 					</a>
 
 					<div class="dropdown-content">

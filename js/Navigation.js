@@ -1,13 +1,38 @@
+var toggleVal = 0;
+
 document.getElementById('portfolio').addEventListener('click', function() {
     var dropdownContent = document.querySelector('.dropdown-content');
     var strelica = document.getElementById('arrow');
 
-    // Promijeni ikonu strelice
-    strelica.classList.toggle('fa-caret-down');
-    strelica.classList.toggle('fa-caret-up');
+    toggleVal = toggleVal === 0 ? 1 : 0;
 
-    // Prikaži ili sakrij dropdown
-    dropdownContent.style.display = strelica.classList.contains('fa-caret-up') ? 'block' : '';
+    if(toggleVal === 1) {
+      document.getElementById('portfolio').style.pointerEvents = 'none';
+      setTimeout(function() {
+        document.getElementById('portfolio').style.pointerEvents = 'auto';
+      }, 300);
+
+      strelica.style.transform = 'rotate(-180deg)';
+      dropdownContent.style.opacity = '0';
+      dropdownContent.style.display = 'block';
+      setTimeout(function() {
+        dropdownContent.style.opacity = '1';
+      }, 10);
+    }
+
+    if(!toggleVal) {
+      document.getElementById('portfolio').style.pointerEvents = 'none';
+      setTimeout(function() {
+        document.getElementById('portfolio').style.pointerEvents = 'auto';
+      }, 300);
+
+      strelica.style.transform = 'rotate(0deg)';
+
+      dropdownContent.style.opacity = '0';
+      setTimeout(function() {
+        dropdownContent.style.display = 'none';
+      }, 250);
+    }
 });
 
 
